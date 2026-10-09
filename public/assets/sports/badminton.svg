@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250">
+  <defs>
+    <linearGradient id="sgrad_badminton" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" rx="24" fill="#09090b"/>
+  <rect x="6" y="6" width="388" height="238" rx="20" fill="url(#sgrad_badminton)" stroke="#8b5cf6" stroke-width="2" stroke-opacity="0.4"/>
+  <circle cx="200" cy="105" r="45" fill="#8b5cf6" fill-opacity="0.2" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="200" y="115" font-family="system-ui, sans-serif" font-weight="900" font-size="28" fill="#8b5cf6" text-anchor="middle">GC</text>
+  <text x="200" y="185" font-family="system-ui, sans-serif" font-weight="800" font-size="24" fill="#f4f4f5" text-anchor="middle" letter-spacing="1">BADMINTON</text>
+</svg>

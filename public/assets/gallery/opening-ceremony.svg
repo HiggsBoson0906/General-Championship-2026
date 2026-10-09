@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <rect width="600" height="400" rx="20" fill="#18181b"/>
+  <rect x="8" y="8" width="584" height="384" rx="16" fill="#09090b" stroke="#f59e0b" stroke-width="2" stroke-opacity="0.3"/>
+  <circle cx="300" cy="180" r="60" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="2"/>
+  <text x="300" y="190" font-family="system-ui, sans-serif" font-weight="900" font-size="32" fill="#f59e0b" text-anchor="middle">GC 2026</text>
+  <text x="300" y="290" font-family="system-ui, sans-serif" font-weight="700" font-size="22" fill="#e4e4e7" text-anchor="middle">OPENING CEREMONY</text>
+</svg>

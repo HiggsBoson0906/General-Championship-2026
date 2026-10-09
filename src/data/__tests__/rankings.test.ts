@@ -1,17 +1,28 @@
 import { describe, it, expect } from 'vitest';
+import fs from 'fs';
+import path from 'path';
 import { calculateStandings, DEFAULT_SCORING_CONFIG } from '../rankings';
+import { parseCsvText } from '../csvLoader';
+import {
+  RawTeamSchema,
+  transformTeam,
+  RawSportSchema,
+  transformSport,
+  RawMatchSchema,
+  transformMatch,
+} from '../schemas';
 import type { Team, Sport, Match } from '../../types';
 
 describe('Rankings Calculation Engine', () => {
   const mockTeams: Team[] = [
-    { id: 'team-1', name: 'Alpha Squad', shortName: 'ALP', department: 'Arch', image: '', primaryColor: '#f59e0b', description: '' },
-    { id: 'team-2', name: 'Beta Force', shortName: 'BET', department: 'CS', image: '', primaryColor: '#3b82f6', description: '' },
-    { id: 'team-3', name: 'Gamma Crew', shortName: 'GAM', department: 'Mech', image: '', primaryColor: '#10b981', description: '' },
+    { id: 'team-red', name: 'Red Phoenix', shortName: 'RED', department: 'Mech', image: '', primaryColor: '#ef4444', description: '' },
+    { id: 'team-blue', name: 'Blue Titans', shortName: 'BLU', department: 'CS', image: '', primaryColor: '#3b82f6', description: '' },
+    { id: 'team-gold', name: 'Golden Eagles', shortName: 'GLD', department: 'Arch', image: '', primaryColor: '#f59e0b', description: '' },
   ];
 
   const mockSports: Sport[] = [
-    { id: 'cricket', title: 'Cricket', category: 'Team', description: '', image: '', venue: 'Oval', maxPoints: 44 },
-    { id: 'football', title: 'Football', category: 'Team', description: '', image: '', venue: 'Ground', maxPoints: 20 },
+    { id: 'cricket', title: 'Cricket', category: 'Team', description: '', image: '', venue: 'Oval', maxPoints: 35 },
+    { id: 'football', title: 'Football', category: 'Team', description: '', image: '', venue: 'Ground', maxPoints: 30 },
   ];
 
   it('aggregates explicit match points and assigns correct ranks', () => {
@@ -23,13 +34,13 @@ describe('Rankings Calculation Engine', () => {
         time: '16:00',
         venue: 'Oval',
         stage: 'Final',
-        team1Id: 'team-1',
-        team2Id: 'team-2',
-        winnerId: 'team-1',
-        pointsAwarded: 44,
+        team1Id: 'team-gold',
+        team2Id: 'team-blue',
+        winnerId: 'team-gold',
+        pointsAwarded: 20,
         status: 'completed',
-        scoreTeam1: '150',
-        scoreTeam2: '140',
+        scoreTeam1: '155/4',
+        scoreTeam2: '152/9',
       },
       {
         id: 'm2',
@@ -38,9 +49,9 @@ describe('Rankings Calculation Engine', () => {
         time: '17:00',
         venue: 'Ground',
         stage: 'Final',
-        team1Id: 'team-2',
-        team2Id: 'team-3',
-        winnerId: 'team-2',
+        team1Id: 'team-blue',
+        team2Id: 'team-red',
+        winnerId: 'team-blue',
         pointsAwarded: 10,
         status: 'completed',
         scoreTeam1: '2',
@@ -50,17 +61,17 @@ describe('Rankings Calculation Engine', () => {
 
     const standings = calculateStandings(mockTeams, mockSports, mockMatches, DEFAULT_SCORING_CONFIG);
 
-    expect(standings[0].teamId).toBe('team-1');
+    expect(standings[0].teamId).toBe('team-gold');
     expect(standings[0].rank).toBe(1);
-    expect(standings[0].overallPoints).toBe(44);
+    expect(standings[0].overallPoints).toBe(20);
     expect(standings[0].wins).toBe(1);
 
-    expect(standings[1].teamId).toBe('team-2');
+    expect(standings[1].teamId).toBe('team-blue');
     expect(standings[1].rank).toBe(2);
     expect(standings[1].overallPoints).toBe(10);
     expect(standings[1].wins).toBe(1);
 
-    expect(standings[2].teamId).toBe('team-3');
+    expect(standings[2].teamId).toBe('team-red');
     expect(standings[2].rank).toBe(3);
     expect(standings[2].overallPoints).toBe(0);
     expect(standings[2].losses).toBe(1);
@@ -75,13 +86,13 @@ describe('Rankings Calculation Engine', () => {
         time: '16:00',
         venue: 'Oval',
         stage: 'League',
-        team1Id: 'team-1',
-        team2Id: 'team-3',
-        winnerId: 'team-1',
+        team1Id: 'team-red',
+        team2Id: 'team-gold',
+        winnerId: 'team-red',
         pointsAwarded: 8,
         status: 'completed',
-        scoreTeam1: '',
-        scoreTeam2: '',
+        scoreTeam1: '100',
+        scoreTeam2: '90',
       },
       {
         id: 'm2',
@@ -90,19 +101,19 @@ describe('Rankings Calculation Engine', () => {
         time: '16:00',
         venue: 'Oval',
         stage: 'League',
-        team1Id: 'team-2',
-        team2Id: 'team-3',
-        winnerId: 'team-2',
+        team1Id: 'team-blue',
+        team2Id: 'team-gold',
+        winnerId: 'team-blue',
         pointsAwarded: 8,
         status: 'completed',
-        scoreTeam1: '',
-        scoreTeam2: '',
+        scoreTeam1: '100',
+        scoreTeam2: '90',
       },
     ];
 
     const standings = calculateStandings(mockTeams, mockSports, mockMatches, DEFAULT_SCORING_CONFIG);
 
-    // Both team-1 and team-2 have 8 points and 1 win, so they should share rank 1
+    // Both team-red and team-blue have 8 points and 1 win, so they should share rank 1
     expect(standings[0].overallPoints).toBe(8);
     expect(standings[1].overallPoints).toBe(8);
     expect(standings[0].rank).toBe(1);
@@ -119,11 +130,11 @@ describe('Rankings Calculation Engine', () => {
         time: '16:00',
         venue: 'Oval',
         stage: 'Final',
-        team1Id: 'team-3',
-        team2Id: 'team-1',
+        team1Id: 'team-gold',
+        team2Id: 'team-red',
         winnerId: null,
         pointsAwarded: 50,
-        status: 'scheduled', // upcoming
+        status: 'scheduled',
         scoreTeam1: '',
         scoreTeam2: '',
       },
@@ -132,5 +143,23 @@ describe('Rankings Calculation Engine', () => {
     const standings = calculateStandings(mockTeams, mockSports, mockMatches, DEFAULT_SCORING_CONFIG);
 
     expect(standings.every((s) => s.overallPoints === 0)).toBe(true);
+  });
+
+  it('calculates consistent realistic sample standings from production CSV files', () => {
+    const publicDataDir = path.resolve(import.meta.dirname, '../../../public/data');
+    const teams = parseCsvText(fs.readFileSync(path.join(publicDataDir, 'teams.csv'), 'utf8'), 'teams.csv', RawTeamSchema, transformTeam).data;
+    const sports = parseCsvText(fs.readFileSync(path.join(publicDataDir, 'sports.csv'), 'utf8'), 'sports.csv', RawSportSchema, transformSport).data;
+    const matches = parseCsvText(fs.readFileSync(path.join(publicDataDir, 'matches.csv'), 'utf8'), 'matches.csv', RawMatchSchema, transformMatch).data;
+
+    const standings = calculateStandings(teams, sports, matches, DEFAULT_SCORING_CONFIG);
+
+    expect(standings).toHaveLength(8);
+    // Highest points team should be rank 1
+    expect(standings[0].rank).toBe(1);
+    expect(standings[0].overallPoints).toBeGreaterThan(standings[1].overallPoints);
+    // All 8 teams should have distributed points arrays for all 6 sports
+    standings.forEach((s) => {
+      expect(s.distributedPoints).toHaveLength(6);
+    });
   });
 });

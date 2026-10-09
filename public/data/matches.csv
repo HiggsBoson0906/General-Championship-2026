@@ -1,35 +1,37 @@
 id,sport_id,date,time,venue,stage,team1_id,team2_id,winner_id,points_awarded,status,score_team1,score_team2,mvp_name,mvp_title,mvp_image
-m-cricket-01,cricket,2025-09-29,16:00,Main Stadium Oval,Final,team-1,team-2,team-1,44,completed,156/4 (20 ov),142/8 (20 ov),Player 1,Best Captain,/assets/sports/cricket/player1.jpg
-m-cricket-02,cricket,2025-09-28,14:00,Main Stadium Oval,Semi-Final,team-1,team-2,team-1,5,completed,134/5 (18.2 ov),133/9 (20 ov),Player 2,Best Vice-Captain,/assets/sports/cricket/player2.jpg
-m-cricket-03,cricket,2025-09-27,09:30,Main Stadium Oval,Quarter-Final,team-3,team-2,team-2,8,completed,110/10 (17.4 ov),112/3 (15.1 ov),Player 3,Star Bowler,/assets/sports/cricket/player3.jpg
-m-basketball-01,basketball,2025-09-28,18:00,Indoor Sports Complex Court 1,Final,team-1,team-4,team-1,8,completed,68,59,Player 1,Top Scorer,/assets/sports/basketball/player1.jpg
-m-basketball-02,basketball,2025-09-27,17:30,Indoor Sports Complex Court 1,Semi-Final,team-2,team-3,team-2,8,completed,54,48,Player 4,Defensive Anchor,/assets/sports/basketball/player2.jpg
-m-tabletennis-01,table-tennis,2025-09-28,15:00,TT Arena Hall,Final,team-1,team-3,team-1,8,completed,3,1,Player 5,Singles Champion,/assets/sports/table-tennis/player1.jpg
-m-tabletennis-02,table-tennis,2025-09-27,16:00,TT Arena Hall,Semi-Final,team-2,team-4,team-2,8,completed,3,2,Player 6,Ace Server,/assets/sports/table-tennis/player2.jpg
-m-badminton-01,badminton,2025-09-28,11:00,Badminton Courts 1-4,Final,team-1,team-5,team-1,5,completed,2,0,Player 1,Singles Star,/assets/sports/badminton/player1.jpg
-m-badminton-02,badminton,2025-09-27,10:00,Badminton Courts 1-4,Semi-Final,team-2,team-6,team-2,8,completed,2,1,Player 2,Doubles Specialist,/assets/sports/badminton/player2.jpg
-m-football-01,football,2025-09-28,16:30,Football Ground A,Final,team-1,team-3,team-1,5,completed,2,1,Player 7,Golden Boot,/assets/sports/football/player1.jpg
-m-football-02,football,2025-09-27,15:30,Football Ground A,Semi-Final,team-2,team-4,team-2,8,completed,3,0,Player 8,Playmaker,/assets/sports/football/player2.jpg
-m-volleyball-01,volleyball,2025-09-28,17:00,Outdoor Volleyball Arena,Final,team-1,team-2,team-1,5,completed,3,1,Player 1,Lead Spiker,/assets/sports/volleyball/player1.jpg
-m-volleyball-02,volleyball,2025-09-27,16:30,Outdoor Volleyball Arena,Semi-Final,team-2,team-5,team-2,8,completed,3,0,Player 2,Top Setter,/assets/sports/volleyball/player2.jpg
-m-kabaddi-01,kabaddi,2025-09-28,19:00,Kabaddi Clay Court,Final,team-1,team-6,team-1,5,completed,38,29,Player 9,Super Raider,/assets/sports/kabaddi/player1.jpg
-m-kabaddi-02,kabaddi,2025-09-27,18:30,Kabaddi Clay Court,Semi-Final,team-2,team-3,team-2,8,completed,42,35,Player 10,Corner Stopper,/assets/sports/kabaddi/player2.jpg
-m-khokho-01,kho-kho,2025-09-28,08:30,Kho Kho Field,Final,team-1,team-4,team-1,5,completed,16,12,Player 1,Quick Chaser,/assets/sports/kho-kho/player1.jpg
-m-khokho-02,kho-kho,2025-09-27,08:00,Kho Kho Field,Semi-Final,team-2,team-7,team-2,8,completed,18,14,Player 2,Active Dodger,/assets/sports/kho-kho/player2.jpg
-m-chess-01,chess,2025-09-28,14:00,Mind Sports Lounge,Final,team-1,team-5,team-1,5,completed,3.5,0.5,Player 11,Board 1 GM,/assets/sports/chess/player1.jpg
-m-chess-02,chess,2025-09-27,14:00,Mind Sports Lounge,Semi-Final,team-2,team-8,team-2,8,completed,3,1,Player 12,Tactical Finisher,/assets/sports/chess/player2.jpg
-m-athletics-01,athletics,2025-09-28,07:00,Athletic Track (400m),4x100m Relay Final,team-1,team-2,team-1,5,completed,43.8s,44.5s,Player 13,Anchor Sprinter,/assets/sports/athletics/player1.jpg
-m-athletics-02,athletics,2025-09-27,07:00,Athletic Track (400m),100m Dash Final,team-2,team-3,team-2,8,completed,10.9s,11.2s,Player 14,Fastest Runner,/assets/sports/athletics/player2.jpg
-m-tugofwar-01,tug-of-war,2025-09-28,17:45,Central Arena,Final,team-1,team-6,team-1,5,completed,2,0,Player 15,Power Puller,/assets/sports/tug-of-war/player1.jpg
-m-tugofwar-02,tug-of-war,2025-09-27,17:15,Central Arena,Semi-Final,team-2,team-7,team-2,8,completed,2,1,Player 16,Anchor Weight,/assets/sports/tug-of-war/player2.jpg
-m-fitness-01,fitness-challenge,2025-09-28,10:00,Gym & Strength Arena,Final,team-1,team-4,team-1,5,completed,420 pts,395 pts,Player 17,Iron Athlete,/assets/sports/fitness-challenge/player1.jpg
-m-fitness-02,fitness-challenge,2025-09-27,10:00,Gym & Strength Arena,Semi-Final,team-2,team-5,team-2,8,completed,385 pts,360 pts,Player 18,Cardio Leader,/assets/sports/fitness-challenge/player2.jpg
-m-handball-01,handball,2025-09-28,15:30,Handball Court,Final,team-1,team-3,team-1,5,completed,24,21,Player 1,Top Goalscorer,/assets/sports/handball/player1.jpg
-m-handball-02,handball,2025-09-27,15:00,Handball Court,Semi-Final,team-2,team-8,team-2,8,completed,27,23,Player 2,Key Goalkeeper,/assets/sports/handball/player2.jpg
-m-yoga-01,yoga,2025-09-28,06:30,Wellness Hall,Final,team-1,team-7,team-1,5,completed,94.5,91.0,Player 19,Yogasana Champion,/assets/sports/yoga/player1.jpg
-m-yoga-02,yoga,2025-09-27,06:30,Wellness Hall,Semi-Final,team-2,team-6,team-2,8,completed,92.0,88.5,Player 20,Balance Master,/assets/sports/yoga/player2.jpg
-m-sch-01,cricket,2026-10-15,14:00,Main Stadium Oval,League Stage - Match 1,team-3,team-4,,0,scheduled,,,,,
-m-sch-02,football,2026-10-15,16:30,Football Ground A,Group A Clash,team-5,team-6,,0,scheduled,,,,,
-m-sch-03,basketball,2026-10-16,17:00,Indoor Sports Complex Court 1,Quarter-Final 1,team-1,team-7,,0,scheduled,,,,,
-m-sch-04,badminton,2026-10-16,18:30,Badminton Courts 1-4,Group B Opening,team-2,team-8,,0,scheduled,,,,,
-m-sch-05,kabaddi,2026-10-17,19:00,Kabaddi Clay Court,Super League 1,team-4,team-5,,0,scheduled,,,,,
+m-fb-01,football,2025-09-24,16:00,Main Stadium Ground,Quarter-Final 1,team-red,team-blue,team-red,8,completed,2,1,Aarav Sharma,Clinical Striker,/assets/gallery/football-save.svg
+m-fb-02,football,2025-09-24,18:00,Main Stadium Ground,Quarter-Final 2,team-gold,team-green,team-gold,8,completed,3,2,Vikram Rathore,Midfield Playmaker,/assets/gallery/football-save.svg
+m-fb-03,football,2025-09-25,16:00,Main Stadium Ground,Quarter-Final 3,team-purple,team-orange,team-purple,8,completed,1,0,Rohan Iyer,Defensive Anchor,/assets/gallery/football-save.svg
+m-fb-04,football,2025-09-26,17:00,Main Stadium Ground,Semi-Final 1,team-red,team-purple,team-red,10,completed,2,0,Kabir Khan,Golden Boot Winner,/assets/gallery/football-save.svg
+m-fb-05,football,2025-09-28,16:30,Main Stadium Ground,Final,team-red,team-gold,team-gold,15,completed,1,2,Aryan Sen,Match Winner,/assets/gallery/football-save.svg
+m-fb-06,football,2026-10-18,16:00,Main Stadium Ground,League Clash,team-silver,team-cyan,,0,scheduled,,,,,
+m-ck-01,cricket,2025-09-22,09:30,University Cricket Oval,Group Match A,team-blue,team-gold,team-blue,8,completed,164/4 (20 ov),158/8 (20 ov),Dev Patel,Match Winning 72,/assets/gallery/cricket-trophy.svg
+m-ck-02,cricket,2025-09-23,13:30,University Cricket Oval,Group Match B,team-green,team-purple,team-green,8,completed,142/6 (20 ov),138/9 (20 ov),Siddharth V,Death Overs Specialist,/assets/gallery/cricket-trophy.svg
+m-ck-03,cricket,2025-09-25,09:30,University Cricket Oval,Semi-Final 1,team-blue,team-silver,team-blue,10,completed,180/3 (20 ov),145/8 (20 ov),Karan Malhotra,Century Knock 102*,/assets/gallery/cricket-trophy.svg
+m-ck-04,cricket,2025-09-26,13:30,University Cricket Oval,Semi-Final 2,team-gold,team-red,team-gold,10,completed,172/5 (20 ov),169/7 (20 ov),Aditya Verma,All-Round MVP,/assets/gallery/cricket-trophy.svg
+m-ck-05,cricket,2025-09-29,14:00,University Cricket Oval,Championship Final,team-blue,team-gold,team-gold,20,completed,152/9 (20 ov),155/4 (18.4 ov),Nikhil Joshi,Finals Captain Knock,/assets/gallery/cricket-trophy.svg
+m-ck-06,cricket,2026-10-19,09:30,University Cricket Oval,Exhibition Opener,team-orange,team-cyan,,0,scheduled,,,,,
+m-bb-01,basketball,2025-09-23,17:00,Indoor Sports Complex Court 1,Quarter-Final 1,team-red,team-green,team-red,6,completed,74,68,Tarun Nair,Point Guard Maestro,/assets/gallery/basketball-shot.svg
+m-bb-02,basketball,2025-09-23,19:00,Indoor Sports Complex Court 1,Quarter-Final 2,team-blue,team-cyan,team-blue,6,completed,62,54,Rishi Mehta,Rebound King,/assets/gallery/basketball-shot.svg
+m-bb-03,basketball,2025-09-25,18:00,Indoor Sports Complex Court 1,Semi-Final 1,team-red,team-orange,team-red,8,completed,80,71,Samir Roy,Top Scorer 28 pts,/assets/gallery/basketball-shot.svg
+m-bb-04,basketball,2025-09-26,18:00,Indoor Sports Complex Court 1,Semi-Final 2,team-gold,team-blue,team-gold,8,completed,69,65,Manav Chawla,Clutch 3-Pointer,/assets/gallery/basketball-shot.svg
+m-bb-05,basketball,2025-09-28,18:30,Indoor Sports Complex Court 1,Gold Medal Game,team-red,team-gold,team-red,12,completed,82,79,Aarav Sharma,Tournament MVP,/assets/gallery/basketball-shot.svg
+m-bb-06,basketball,2026-10-20,18:00,Indoor Sports Complex Court 1,Bronze Playoff,team-purple,team-silver,,0,scheduled,,,,,
+m-vb-01,volleyball,2025-09-22,16:00,Outdoor Volleyball Arena,Preliminary Round 1,team-green,team-orange,team-green,6,completed,3,1,Pranav Rao,Power Spiker,/assets/gallery/volleyball-spike.svg
+m-vb-02,volleyball,2025-09-23,16:00,Outdoor Volleyball Arena,Preliminary Round 2,team-purple,team-cyan,team-purple,6,completed,3,0,Zayd Ali,Defensive Libero,/assets/gallery/volleyball-spike.svg
+m-vb-03,volleyball,2025-09-24,17:00,Outdoor Volleyball Arena,Semi-Final 1,team-green,team-red,team-green,8,completed,3,2,Pranav Rao,Ace Server,/assets/gallery/volleyball-spike.svg
+m-vb-04,volleyball,2025-09-25,17:00,Outdoor Volleyball Arena,Semi-Final 2,team-blue,team-purple,team-blue,8,completed,3,1,Kunal Ghosh,Middle Blocker,/assets/gallery/volleyball-spike.svg
+m-vb-05,volleyball,2025-09-27,17:00,Outdoor Volleyball Arena,Championship Match,team-green,team-blue,team-green,10,completed,3,2,Harsh Vardhan,Deciding Set Finisher,/assets/gallery/volleyball-spike.svg
+m-vb-06,volleyball,2026-10-21,16:30,Outdoor Volleyball Arena,Showcase Match,team-gold,team-silver,,0,scheduled,,,,,
+m-bd-01,badminton,2025-09-22,10:00,Badminton Arena Courts 1-3,Round of 16,team-purple,team-silver,team-purple,5,completed,2,1,Tanmay Deshmukh,Singles Ace,/assets/gallery/badminton-rally.svg
+m-bd-02,badminton,2025-09-23,11:00,Badminton Arena Courts 1-3,Quarter-Final 1,team-gold,team-cyan,team-gold,6,completed,2,0,Varun Kapoor,Smash Master,/assets/gallery/badminton-rally.svg
+m-bd-03,badminton,2025-09-24,10:30,Badminton Arena Courts 1-3,Semi-Final 1,team-purple,team-green,team-purple,8,completed,2,1,Tanmay Deshmukh,Net Play Virtuoso,/assets/gallery/badminton-rally.svg
+m-bd-04,badminton,2025-09-25,11:30,Badminton Arena Courts 1-3,Semi-Final 2,team-gold,team-red,team-gold,8,completed,2,0,Ishan Saxena,Dropshot Specialist,/assets/gallery/badminton-rally.svg
+m-bd-05,badminton,2025-09-27,11:00,Badminton Arena Courts 1-3,Gold Final,team-purple,team-gold,team-purple,10,completed,2,1,Tanmay Deshmukh,Singles Champion,/assets/gallery/badminton-rally.svg
+m-bd-06,badminton,2026-10-22,10:00,Badminton Arena Courts 1-3,Group Tie,team-blue,team-orange,,0,scheduled,,,,,
+m-tt-01,table-tennis,2025-09-22,14:00,Table Tennis Hall,First Round,team-silver,team-orange,team-silver,5,completed,3,1,Dhruv Singhal,Top Spin Dominator,/assets/gallery/table-tennis-forehand.svg
+m-tt-02,table-tennis,2025-09-23,14:00,Table Tennis Hall,Quarter-Final,team-cyan,team-blue,team-blue,6,completed,1,3,Rohan Batra,Backhand Wizard,/assets/gallery/table-tennis-forehand.svg
+m-tt-03,table-tennis,2025-09-24,15:00,Table Tennis Hall,Semi-Final 1,team-silver,team-green,team-silver,7,completed,3,2,Dhruv Singhal,Five-Set Winner,/assets/gallery/table-tennis-forehand.svg
+m-tt-04,table-tennis,2025-09-25,15:00,Table Tennis Hall,Semi-Final 2,team-red,team-blue,team-red,7,completed,3,0,Aman Gupta,Flick Specialist,/assets/gallery/table-tennis-forehand.svg
+m-tt-05,table-tennis,2025-09-28,15:00,Table Tennis Hall,Grand Final,team-silver,team-red,team-silver,10,completed,3,2,Dhruv Singhal,Gold Medalist TT,/assets/gallery/table-tennis-forehand.svg
+m-tt-06,table-tennis,2026-10-23,14:30,Table Tennis Hall,Consolation Rubber,team-gold,team-purple,,0,scheduled,,,,,

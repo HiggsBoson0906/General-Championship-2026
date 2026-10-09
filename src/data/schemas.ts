@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Team, Sport, Match, ChampionshipHistory, MatchStatus } from '../types';
+import type { Team, Sport, Match, ChampionshipHistory, GalleryItem, MatchStatus } from '../types';
 
 /**
  * Zod schema for Teams CSV records.
@@ -9,7 +9,7 @@ export const RawTeamSchema = z.object({
   name: z.string().trim().min(1, 'Team name is required'),
   short_name: z.string().trim().min(1, 'Short name is required'),
   department: z.string().trim().min(1, 'Department is required'),
-  image: z.string().trim().default('/assets/teams/default.png'),
+  image: z.string().trim().default('/assets/teams/default.svg'),
   primary_color: z.string().trim().default('#f59e0b'),
   description: z.string().trim().default(''),
 });
@@ -34,7 +34,7 @@ export const RawSportSchema = z.object({
   title: z.string().trim().min(1, 'Sport title is required'),
   category: z.string().trim().min(1, 'Sport category is required'),
   description: z.string().trim().default(''),
-  image: z.string().trim().default('/assets/sports/default.jpg'),
+  image: z.string().trim().default('/assets/sports/default.svg'),
   venue: z.string().trim().default('Main Sports Complex'),
   max_points: z.coerce.number().min(0, 'Max points must be non-negative').default(20),
 });
@@ -59,7 +59,14 @@ const MatchStatusEnum = z.enum(['completed', 'scheduled', 'live', 'cancelled']);
 export const RawMatchSchema = z.object({
   id: z.string().trim().min(1, 'Match ID is required'),
   sport_id: z.string().trim().min(1, 'Sport ID is required'),
-  date: z.string().trim().regex(/^\d{4}-\d{2}-\d{2}$/, 'Date must be in YYYY-MM-DD format'),
+  date: z
+    .string()
+    .trim()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, 'Date must be in YYYY-MM-DD format')
+    .refine((val) => {
+      const d = new Date(val);
+      return !isNaN(d.getTime()) && d.toISOString().slice(0, 10) === val;
+    }, 'Date must be a real calendar date'),
   time: z.string().trim().default('TBD'),
   venue: z.string().trim().default('Main Sports Ground'),
   stage: z.string().trim().default('League'),
@@ -73,6 +80,24 @@ export const RawMatchSchema = z.object({
   mvp_name: z.string().trim().optional(),
   mvp_title: z.string().trim().optional(),
   mvp_image: z.string().trim().optional(),
+}).refine((data) => {
+  // If match is completed, winner_id should be provided if points are awarded
+  if (data.status === 'completed' && data.points_awarded > 0 && !data.winner_id) {
+    return false;
+  }
+  return true;
+}, {
+  message: 'Completed match with points awarded must specify a winner_id',
+  path: ['winner_id'],
+}).refine((data) => {
+  // Scheduled matches must not have final scores
+  if (data.status === 'scheduled' && (data.score_team1 || data.score_team2)) {
+    return false;
+  }
+  return true;
+}, {
+  message: 'Scheduled upcoming matches must not have final scores',
+  path: ['status'],
 });
 
 export function transformMatch(raw: z.infer<typeof RawMatchSchema>): Match {
@@ -124,19 +149,68 @@ export function transformHistory(raw: z.infer<typeof RawChampionshipHistorySchem
 }
 
 /**
- * Foreign key integrity validation across datasets.
+ * Zod schema for Gallery CSV records.
+ */
+export const RawGallerySchema = z.object({
+  id: z.string().trim().min(1, 'Gallery ID is required'),
+  title: z.string().trim().min(1, 'Gallery title is required'),
+  description: z.string().trim().min(1, 'Gallery description is required'),
+  category: z.string().trim().min(1, 'Gallery category is required'),
+  image: z.string().trim().min(1, 'Gallery image path is required'),
+  date: z.string().trim().optional(),
+});
+
+export function transformGallery(raw: z.infer<typeof RawGallerySchema>): GalleryItem {
+  return {
+    id: raw.id,
+    title: raw.title,
+    description: raw.description,
+    category: raw.category,
+    image: raw.image,
+    date: raw.date || undefined,
+  };
+}
+
+/**
+ * Foreign key integrity and data consistency validation across all datasets.
  */
 export function validateIntegrity(
   teams: Team[],
   sports: Sport[],
   matches: Match[],
-  history: ChampionshipHistory[]
+  history: ChampionshipHistory[],
+  gallery?: GalleryItem[]
 ): string[] {
   const warnings: string[] = [];
   const teamIds = new Set(teams.map((t) => t.id));
   const sportIds = new Set(sports.map((s) => s.id));
 
+  // Check for duplicate team IDs
+  const seenTeamIds = new Set<string>();
+  teams.forEach((t) => {
+    if (seenTeamIds.has(t.id)) {
+      warnings.push(`Duplicate team ID found: "${t.id}"`);
+    }
+    seenTeamIds.add(t.id);
+  });
+
+  // Check for duplicate sport IDs
+  const seenSportIds = new Set<string>();
+  sports.forEach((s) => {
+    if (seenSportIds.has(s.id)) {
+      warnings.push(`Duplicate sport ID found: "${s.id}"`);
+    }
+    seenSportIds.add(s.id);
+  });
+
+  // Check for duplicate match IDs and reference integrity
+  const seenMatchIds = new Set<string>();
   matches.forEach((m) => {
+    if (seenMatchIds.has(m.id)) {
+      warnings.push(`Duplicate match ID found: "${m.id}"`);
+    }
+    seenMatchIds.add(m.id);
+
     if (!sportIds.has(m.sportId)) {
       warnings.push(`Match ${m.id} references non-existent sport "${m.sportId}"`);
     }
@@ -149,8 +223,12 @@ export function validateIntegrity(
     if (m.winnerId && !teamIds.has(m.winnerId)) {
       warnings.push(`Match ${m.id} references non-existent winner "${m.winnerId}"`);
     }
+    if (m.status === 'scheduled' && (m.scoreTeam1 || m.scoreTeam2)) {
+      warnings.push(`Scheduled match ${m.id} has final scores assigned`);
+    }
   });
 
+  // Check history references
   history.forEach((h) => {
     if (h.winnerTeamId && !teamIds.has(h.winnerTeamId)) {
       warnings.push(`History year ${h.year} references non-existent winner "${h.winnerTeamId}"`);
@@ -158,7 +236,21 @@ export function validateIntegrity(
     if (h.runnerUpTeamId && !teamIds.has(h.runnerUpTeamId)) {
       warnings.push(`History year ${h.year} references non-existent runner-up "${h.runnerUpTeamId}"`);
     }
+    if (h.secondRunnerUpTeamId && !teamIds.has(h.secondRunnerUpTeamId)) {
+      warnings.push(`History year ${h.year} references non-existent second runner-up "${h.secondRunnerUpTeamId}"`);
+    }
   });
+
+  // Check gallery duplicates if provided
+  if (gallery) {
+    const seenGalleryIds = new Set<string>();
+    gallery.forEach((g) => {
+      if (seenGalleryIds.has(g.id)) {
+        warnings.push(`Duplicate gallery ID found: "${g.id}"`);
+      }
+      seenGalleryIds.add(g.id);
+    });
+  }
 
   return warnings;
 }

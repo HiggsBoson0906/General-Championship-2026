@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="grad_team-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#09090b" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="#18181b"/>
+  <circle cx="100" cy="100" r="75" fill="url(#grad_team-blue)" stroke="#3b82f6" stroke-width="4"/>
+  <text x="100" y="112" font-family="system-ui, sans-serif" font-weight="900" font-size="38" fill="#ffffff" text-anchor="middle" letter-spacing="2">BLU</text>
+</svg>

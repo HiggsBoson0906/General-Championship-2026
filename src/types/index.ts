@@ -87,11 +87,21 @@ export interface ScoringConfig {
   tieBreaker: Array<'overallPoints' | 'wins' | 'matchesPlayed' | 'teamName'>;
 }
 
+export interface GalleryItem {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  image: string;
+  date?: string;
+}
+
 export interface TournamentData {
   teams: Team[];
   sports: Sport[];
   matches: Match[];
   history: ChampionshipHistory[];
+  gallery: GalleryItem[];
   lastUpdated: string;
 }
 

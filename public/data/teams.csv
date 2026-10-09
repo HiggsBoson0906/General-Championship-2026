@@ -1,9 +1,9 @@
 id,name,short_name,department,image,primary_color,description
-team-1,Arch & MCA,ARCH,Architecture & Computer Applications,/assets/teams/team-1.jpg,#f59e0b,Department of Architecture and Master of Computer Applications
-team-2,Team B,TMB,Computer Science & Engineering,/assets/teams/team-2.jpg,#3b82f6,Department of Computer Science and Engineering
-team-3,Team C,TMC,Mechanical Engineering,/assets/teams/team-3.jpg,#10b981,Department of Mechanical Engineering
-team-4,Team D,TMD,Electrical & Electronics Engineering,/assets/teams/team-4.jpg,#8b5cf6,Department of Electrical and Electronics Engineering
-team-5,Team E,TME,Civil Engineering,/assets/teams/team-5.jpg,#ec4899,Department of Civil Engineering
-team-6,Team F,TMF,Chemical Engineering,/assets/teams/team-6.jpg,#14b8a6,Department of Chemical Engineering
-team-7,Team G,TMG,Biotechnology & Management,/assets/teams/team-7.jpg,#f97316,Department of Biotechnology and Management Studies
-team-8,Team H,TMH,Metallurgy & Materials Engineering,/assets/teams/team-8.jpg,#6366f1,Department of Metallurgical and Materials Engineering
+team-red,Red Phoenix,RED,Mechanical & Aerospace Engineering,/assets/teams/team-red.svg,#ef4444,High-octane contenders celebrated for explosive offense and relentless team spirit.
+team-blue,Blue Titans,BLU,Computer Science & Data Engineering,/assets/teams/team-blue.svg,#3b82f6,Tactical powerhouses recognized for defensive grit and strategic composure under pressure.
+team-gold,Golden Eagles,GLD,Architecture & Industrial Design,/assets/teams/team-gold.svg,#f59e0b,Perennial title contenders showcasing championship pedigree and deep multi-sport rosters.
+team-green,Green Vipers,GRN,Electrical & Electronics Engineering,/assets/teams/team-green.svg,#10b981,Agile athletes distinguished by rapid transitions and unmatched court endurance.
+team-purple,Purple Knights,PUR,Civil & Infrastructure Engineering,/assets/teams/team-purple.svg,#8b5cf6,Disciplined competitors commanding exceptional presence across racquet and net sports.
+team-orange,Orange Blaze,ORG,Chemical & Materials Engineering,/assets/teams/team-orange.svg,#f97316,Energetic squad fueled by loud department backing and high-pressure pressing games.
+team-silver,Silver Wolves,SLV,Biotechnology & Applied Sciences,/assets/teams/team-silver.svg,#94a3b8,Calculating underdogs with technical proficiency in tactical and precision matches.
+team-cyan,Cyan Sharks,CYN,Management & Cognitive Sciences,/assets/teams/team-cyan.svg,#06b6d4,Dynamic unit known for fluid movement and precision teamwork across all matchups.

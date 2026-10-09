@@ -8,6 +8,8 @@ import {
   transformMatch,
   RawChampionshipHistorySchema,
   transformHistory,
+  RawGallerySchema,
+  transformGallery,
   validateIntegrity,
 } from './schemas';
 import type {
@@ -15,6 +17,7 @@ import type {
   Sport,
   Match,
   ChampionshipHistory,
+  GalleryItem,
   TournamentData,
   CsvValidationError,
   MatchStatus,
@@ -40,11 +43,17 @@ export async function loadAllTournamentData(
   }
 
   loadPromise = (async () => {
-    const [teamsRes, sportsRes, matchesRes, historyRes] = await Promise.all([
+    // Attempt loading history from history.csv first, fallback to championship_history.csv
+    let historyRes = await fetchAndParseCsv('/data/history.csv', RawChampionshipHistorySchema, transformHistory);
+    if (historyRes.errors.length > 0 && historyRes.data.length === 0) {
+      historyRes = await fetchAndParseCsv('/data/championship_history.csv', RawChampionshipHistorySchema, transformHistory);
+    }
+
+    const [teamsRes, sportsRes, matchesRes, galleryRes] = await Promise.all([
       fetchAndParseCsv('/data/teams.csv', RawTeamSchema, transformTeam),
       fetchAndParseCsv('/data/sports.csv', RawSportSchema, transformSport),
       fetchAndParseCsv('/data/matches.csv', RawMatchSchema, transformMatch),
-      fetchAndParseCsv('/data/championship_history.csv', RawChampionshipHistorySchema, transformHistory),
+      fetchAndParseCsv('/data/gallery.csv', RawGallerySchema, transformGallery),
     ]);
 
     const combinedErrors: CsvValidationError[] = [
@@ -52,6 +61,7 @@ export async function loadAllTournamentData(
       ...sportsRes.errors,
       ...matchesRes.errors,
       ...historyRes.errors,
+      ...galleryRes.errors,
     ];
 
     // Check relational foreign key integrity
@@ -59,7 +69,8 @@ export async function loadAllTournamentData(
       teamsRes.data,
       sportsRes.data,
       matchesRes.data,
-      historyRes.data
+      historyRes.data,
+      galleryRes.data
     );
 
     integrityWarnings.forEach((warning) => {
@@ -74,6 +85,7 @@ export async function loadAllTournamentData(
       sports: sportsRes.data,
       matches: matchesRes.data,
       history: historyRes.data,
+      gallery: galleryRes.data,
       lastUpdated: new Date().toISOString(),
     };
 
@@ -181,4 +193,12 @@ export async function getSchedule(filters?: {
 export async function getChampionshipHistory(): Promise<ChampionshipHistory[]> {
   const { data } = await loadAllTournamentData();
   return data.history.sort((a, b) => b.year - a.year);
+}
+
+/**
+ * Retrieves championship gallery items.
+ */
+export async function getGallery(): Promise<GalleryItem[]> {
+  const { data } = await loadAllTournamentData();
+  return data.gallery;
 }

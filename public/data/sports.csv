@@ -1,15 +1,7 @@
 id,title,category,description,image,venue,max_points
-cricket,Cricket,Team Sport,Exciting matches and tournaments for all cricket lovers.,/assets/sports/cricket.jpg,Main Stadium Oval,44
-basketball,Basketball,Team Sport,High-octane court action with singles and team tournaments.,/assets/sports/basketball.jpg,Indoor Sports Complex Court 1,25
-table-tennis,Table Tennis,Racquet,Fast-paced fun on the table every evening.,/assets/sports/table-tennis.jpg,TT Arena Hall,15
-badminton,Badminton,Racquet,Singles and doubles tournaments for all skill levels.,/assets/sports/badminton.jpg,Badminton Courts 1-4,20
-football,Football,Team Sport,Join our football community with weekly intense league clashes.,/assets/sports/football.jpg,Football Ground A,30
-volleyball,Volleyball,Team Sport,Dynamic volleyball spikes and defensive rallies.,/assets/sports/volleyball.jpg,Outdoor Volleyball Arena,20
-kabaddi,Kabaddi,Combat & Physical,Join our kabaddi community with weekly high-intensity raids.,/assets/sports/kabaddi.jpg,Kabaddi Clay Court,20
-kho-kho,Kho Kho,Team Sport,Traditional swift agility and tag tournament.,/assets/sports/kho-kho.jpg,Kho Kho Field,15
-chess,Chess,Mind Sport,Deep strategic duels across rapid and classical formats.,/assets/sports/chess.jpg,Mind Sports Lounge,15
-athletics,Athletics,Track & Field,Track sprints relays long jump and field events.,/assets/sports/athletics.jpg,Athletic Track (400m),35
-tug-of-war,Tug of War,Strength & Physical,True grit and departmental strength showdown.,/assets/sports/tug-of-war.jpg,Central Arena,15
-fitness-challenge,Fitness Challenge,Fitness,Departmental endurance calisthenics and fitness trials.,/assets/sports/fitness-challenge.jpg,Gym & Strength Arena,15
-handball,Handball,Team Sport,Rapid transitions and high-scoring goal-line action.,/assets/sports/handball.jpg,Handball Court,20
-yoga,Yoga,Discipline & Posture,Precision posture balance and artistic yogasana competition.,/assets/sports/yoga.jpg,Wellness Hall,15
+football,Football,Team Sport,11-a-side inter-department championship played on natural grass turf with standard FIFA rules.,/assets/sports/football.svg,Main Stadium Ground,30
+cricket,Cricket,Team Sport,Exciting T20 format tournament on a prepared central wicket featuring intense department rivalries.,/assets/sports/cricket.svg,University Cricket Oval,35
+basketball,Basketball,Team Sport,High-tempo 5v5 full-court basketball showdown under collegiate FIBA championship rules.,/assets/sports/basketball.svg,Indoor Sports Complex Court 1,25
+volleyball,Volleyball,Team Sport,Dynamic 6v6 aerial battles featuring powerful spikes and coordinated defensive blocks.,/assets/sports/volleyball.svg,Outdoor Volleyball Arena,20
+badminton,Badminton,Racquet,Fast-paced synthetic indoor court championship featuring singles and doubles departmental ties.,/assets/sports/badminton.svg,Badminton Arena Courts 1-3,20
+table-tennis,Table Tennis,Racquet,Rapid reflex table tennis tournament spanning intense singles encounters and doubles rubbers.,/assets/sports/table-tennis.svg,Table Tennis Hall,15

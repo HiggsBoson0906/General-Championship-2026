@@ -1,13 +1,36 @@
 import { describe, it, expect } from 'vitest';
 import {
+  RawTeamSchema,
+  transformTeam,
   RawSportSchema,
   transformSport,
   RawMatchSchema,
   transformMatch,
+  RawGallerySchema,
+  transformGallery,
   validateIntegrity,
 } from '../schemas';
 
 describe('Data Schemas & Validation', () => {
+  it('validates and transforms team schema correctly', () => {
+    const rawTeam = {
+      id: 'team-red',
+      name: 'Red Phoenix',
+      short_name: 'RED',
+      department: 'Mechanical',
+      image: '/assets/teams/team-red.svg',
+      primary_color: '#ef4444',
+      description: 'Fiery competitors',
+    };
+
+    const parsed = RawTeamSchema.parse(rawTeam);
+    const domain = transformTeam(parsed);
+
+    expect(domain.id).toBe('team-red');
+    expect(domain.shortName).toBe('RED');
+    expect(domain.primaryColor).toBe('#ef4444');
+  });
+
   it('validates and transforms sport schema correctly', () => {
     const rawSport = {
       id: 'cricket',
@@ -16,14 +39,31 @@ describe('Data Schemas & Validation', () => {
       description: 'Exciting matches',
       image: '/cricket.jpg',
       venue: 'Main Oval',
-      max_points: '44',
+      max_points: '35',
     };
 
     const parsed = RawSportSchema.parse(rawSport);
     const domain = transformSport(parsed);
 
     expect(domain.id).toBe('cricket');
-    expect(domain.maxPoints).toBe(44);
+    expect(domain.maxPoints).toBe(35);
+  });
+
+  it('validates and transforms gallery schema correctly', () => {
+    const rawGallery = {
+      id: 'gal-01',
+      title: 'Trophy Lift',
+      description: 'Celebration moment',
+      category: 'Cricket',
+      image: '/assets/gallery/cricket.svg',
+      date: '2025-09-29',
+    };
+
+    const parsed = RawGallerySchema.parse(rawGallery);
+    const domain = transformGallery(parsed);
+
+    expect(domain.id).toBe('gal-01');
+    expect(domain.title).toBe('Trophy Lift');
   });
 
   it('validates match status enum and coerces points', () => {
@@ -34,10 +74,10 @@ describe('Data Schemas & Validation', () => {
       time: '16:00',
       venue: 'Main Oval',
       stage: 'Final',
-      team1_id: 'team-1',
-      team2_id: 'team-2',
-      winner_id: 'team-1',
-      points_awarded: '44',
+      team1_id: 'team-red',
+      team2_id: 'team-blue',
+      winner_id: 'team-red',
+      points_awarded: '15',
       status: 'completed',
       score_team1: '150/4',
       score_team2: '140/8',
@@ -47,25 +87,43 @@ describe('Data Schemas & Validation', () => {
     const domain = transformMatch(parsed);
 
     expect(domain.status).toBe('completed');
-    expect(domain.pointsAwarded).toBe(44);
-    expect(domain.winnerId).toBe('team-1');
+    expect(domain.pointsAwarded).toBe(15);
+    expect(domain.winnerId).toBe('team-red');
   });
 
-  it('rejects invalid match date format', () => {
-    const rawMatch = {
-      id: 'm-bad-date',
+  it('rejects invalid match date format and impossible dates', () => {
+    const badFormatMatch = {
+      id: 'm-bad-1',
       sport_id: 'cricket',
-      date: '29-09-2025', // invalid format (expected YYYY-MM-DD)
-      team1_id: 'team-1',
+      date: '29-09-2025', // invalid format
+      team1_id: 'team-red',
     };
+    expect(RawMatchSchema.safeParse(badFormatMatch).success).toBe(false);
 
-    const result = RawMatchSchema.safeParse(rawMatch);
-    expect(result.success).toBe(false);
+    const impossibleDateMatch = {
+      id: 'm-bad-2',
+      sport_id: 'cricket',
+      date: '2025-02-30', // Feb 30 does not exist!
+      team1_id: 'team-red',
+    };
+    expect(RawMatchSchema.safeParse(impossibleDateMatch).success).toBe(false);
+  });
+
+  it('rejects scheduled match that specifies scores', () => {
+    const scheduledWithScore = {
+      id: 'm-sch-err',
+      sport_id: 'cricket',
+      date: '2026-10-15',
+      team1_id: 'team-red',
+      status: 'scheduled',
+      score_team1: '150/4', // Invalid! Scheduled match cannot have score
+    };
+    expect(RawMatchSchema.safeParse(scheduledWithScore).success).toBe(false);
   });
 
   it('detects broken foreign key references in validateIntegrity', () => {
     const teams = [
-      { id: 'team-1', name: 'Team 1', shortName: 'T1', department: 'D1', image: '', primaryColor: '', description: '' },
+      { id: 'team-red', name: 'Team Red', shortName: 'TR', department: 'D1', image: '', primaryColor: '', description: '' },
     ];
     const sports = [
       { id: 'cricket', title: 'Cricket', category: 'Team', description: '', image: '', venue: '', maxPoints: 20 },
@@ -78,13 +136,13 @@ describe('Data Schemas & Validation', () => {
         time: '16:00',
         venue: 'Oval',
         stage: 'Final',
-        team1Id: 'team-1',
+        team1Id: 'team-red',
         team2Id: 'ghost-team',
         winnerId: 'ghost-team',
         pointsAwarded: 5,
         status: 'completed' as const,
-        scoreTeam1: '',
-        scoreTeam2: '',
+        scoreTeam1: '10',
+        scoreTeam2: '5',
       },
     ];
     const history = [
@@ -92,7 +150,7 @@ describe('Data Schemas & Validation', () => {
         year: 2024,
         edition: 'GC 2024',
         winnerTeamId: 'ghost-winner',
-        runnerUpTeamId: 'team-1',
+        runnerUpTeamId: 'team-red',
         secondRunnerUpTeamId: '',
         winnerPoints: 100,
         totalSports: 12,
