@@ -1,0 +1,35 @@
+id,sport_id,date,time,venue,stage,team1_id,team2_id,winner_id,points_awarded,status,score_team1,score_team2,mvp_name,mvp_title,mvp_image
+m-cricket-01,cricket,2025-09-29,16:00,Main Stadium Oval,Final,team-1,team-2,team-1,44,completed,156/4 (20 ov),142/8 (20 ov),Player 1,Best Captain,/assets/sports/cricket/player1.jpg
+m-cricket-02,cricket,2025-09-28,14:00,Main Stadium Oval,Semi-Final,team-1,team-2,team-1,5,completed,134/5 (18.2 ov),133/9 (20 ov),Player 2,Best Vice-Captain,/assets/sports/cricket/player2.jpg
+m-cricket-03,cricket,2025-09-27,09:30,Main Stadium Oval,Quarter-Final,team-3,team-2,team-2,8,completed,110/10 (17.4 ov),112/3 (15.1 ov),Player 3,Star Bowler,/assets/sports/cricket/player3.jpg
+m-basketball-01,basketball,2025-09-28,18:00,Indoor Sports Complex Court 1,Final,team-1,team-4,team-1,8,completed,68,59,Player 1,Top Scorer,/assets/sports/basketball/player1.jpg
+m-basketball-02,basketball,2025-09-27,17:30,Indoor Sports Complex Court 1,Semi-Final,team-2,team-3,team-2,8,completed,54,48,Player 4,Defensive Anchor,/assets/sports/basketball/player2.jpg
+m-tabletennis-01,table-tennis,2025-09-28,15:00,TT Arena Hall,Final,team-1,team-3,team-1,8,completed,3,1,Player 5,Singles Champion,/assets/sports/table-tennis/player1.jpg
+m-tabletennis-02,table-tennis,2025-09-27,16:00,TT Arena Hall,Semi-Final,team-2,team-4,team-2,8,completed,3,2,Player 6,Ace Server,/assets/sports/table-tennis/player2.jpg
+m-badminton-01,badminton,2025-09-28,11:00,Badminton Courts 1-4,Final,team-1,team-5,team-1,5,completed,2,0,Player 1,Singles Star,/assets/sports/badminton/player1.jpg
+m-badminton-02,badminton,2025-09-27,10:00,Badminton Courts 1-4,Semi-Final,team-2,team-6,team-2,8,completed,2,1,Player 2,Doubles Specialist,/assets/sports/badminton/player2.jpg
+m-football-01,football,2025-09-28,16:30,Football Ground A,Final,team-1,team-3,team-1,5,completed,2,1,Player 7,Golden Boot,/assets/sports/football/player1.jpg
+m-football-02,football,2025-09-27,15:30,Football Ground A,Semi-Final,team-2,team-4,team-2,8,completed,3,0,Player 8,Playmaker,/assets/sports/football/player2.jpg
+m-volleyball-01,volleyball,2025-09-28,17:00,Outdoor Volleyball Arena,Final,team-1,team-2,team-1,5,completed,3,1,Player 1,Lead Spiker,/assets/sports/volleyball/player1.jpg
+m-volleyball-02,volleyball,2025-09-27,16:30,Outdoor Volleyball Arena,Semi-Final,team-2,team-5,team-2,8,completed,3,0,Player 2,Top Setter,/assets/sports/volleyball/player2.jpg
+m-kabaddi-01,kabaddi,2025-09-28,19:00,Kabaddi Clay Court,Final,team-1,team-6,team-1,5,completed,38,29,Player 9,Super Raider,/assets/sports/kabaddi/player1.jpg
+m-kabaddi-02,kabaddi,2025-09-27,18:30,Kabaddi Clay Court,Semi-Final,team-2,team-3,team-2,8,completed,42,35,Player 10,Corner Stopper,/assets/sports/kabaddi/player2.jpg
+m-khokho-01,kho-kho,2025-09-28,08:30,Kho Kho Field,Final,team-1,team-4,team-1,5,completed,16,12,Player 1,Quick Chaser,/assets/sports/kho-kho/player1.jpg
+m-khokho-02,kho-kho,2025-09-27,08:00,Kho Kho Field,Semi-Final,team-2,team-7,team-2,8,completed,18,14,Player 2,Active Dodger,/assets/sports/kho-kho/player2.jpg
+m-chess-01,chess,2025-09-28,14:00,Mind Sports Lounge,Final,team-1,team-5,team-1,5,completed,3.5,0.5,Player 11,Board 1 GM,/assets/sports/chess/player1.jpg
+m-chess-02,chess,2025-09-27,14:00,Mind Sports Lounge,Semi-Final,team-2,team-8,team-2,8,completed,3,1,Player 12,Tactical Finisher,/assets/sports/chess/player2.jpg
+m-athletics-01,athletics,2025-09-28,07:00,Athletic Track (400m),4x100m Relay Final,team-1,team-2,team-1,5,completed,43.8s,44.5s,Player 13,Anchor Sprinter,/assets/sports/athletics/player1.jpg
+m-athletics-02,athletics,2025-09-27,07:00,Athletic Track (400m),100m Dash Final,team-2,team-3,team-2,8,completed,10.9s,11.2s,Player 14,Fastest Runner,/assets/sports/athletics/player2.jpg
+m-tugofwar-01,tug-of-war,2025-09-28,17:45,Central Arena,Final,team-1,team-6,team-1,5,completed,2,0,Player 15,Power Puller,/assets/sports/tug-of-war/player1.jpg
+m-tugofwar-02,tug-of-war,2025-09-27,17:15,Central Arena,Semi-Final,team-2,team-7,team-2,8,completed,2,1,Player 16,Anchor Weight,/assets/sports/tug-of-war/player2.jpg
+m-fitness-01,fitness-challenge,2025-09-28,10:00,Gym & Strength Arena,Final,team-1,team-4,team-1,5,completed,420 pts,395 pts,Player 17,Iron Athlete,/assets/sports/fitness-challenge/player1.jpg
+m-fitness-02,fitness-challenge,2025-09-27,10:00,Gym & Strength Arena,Semi-Final,team-2,team-5,team-2,8,completed,385 pts,360 pts,Player 18,Cardio Leader,/assets/sports/fitness-challenge/player2.jpg
+m-handball-01,handball,2025-09-28,15:30,Handball Court,Final,team-1,team-3,team-1,5,completed,24,21,Player 1,Top Goalscorer,/assets/sports/handball/player1.jpg
+m-handball-02,handball,2025-09-27,15:00,Handball Court,Semi-Final,team-2,team-8,team-2,8,completed,27,23,Player 2,Key Goalkeeper,/assets/sports/handball/player2.jpg
+m-yoga-01,yoga,2025-09-28,06:30,Wellness Hall,Final,team-1,team-7,team-1,5,completed,94.5,91.0,Player 19,Yogasana Champion,/assets/sports/yoga/player1.jpg
+m-yoga-02,yoga,2025-09-27,06:30,Wellness Hall,Semi-Final,team-2,team-6,team-2,8,completed,92.0,88.5,Player 20,Balance Master,/assets/sports/yoga/player2.jpg
+m-sch-01,cricket,2026-10-15,14:00,Main Stadium Oval,League Stage - Match 1,team-3,team-4,,0,scheduled,,,,,
+m-sch-02,football,2026-10-15,16:30,Football Ground A,Group A Clash,team-5,team-6,,0,scheduled,,,,,
+m-sch-03,basketball,2026-10-16,17:00,Indoor Sports Complex Court 1,Quarter-Final 1,team-1,team-7,,0,scheduled,,,,,
+m-sch-04,badminton,2026-10-16,18:30,Badminton Courts 1-4,Group B Opening,team-2,team-8,,0,scheduled,,,,,
+m-sch-05,kabaddi,2026-10-17,19:00,Kabaddi Clay Court,Super League 1,team-4,team-5,,0,scheduled,,,,,
