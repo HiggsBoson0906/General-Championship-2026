@@ -31,11 +31,11 @@ export const Navbar: React.FC = () => {
               <Trophy className="w-6 h-6 text-amber-400 absolute" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="font-russo text-xl tracking-wider text-amber-400 group-hover:text-amber-300 transition-colors">
+              <div className="flex items-center gap-2 text-lg">
+                <span className="font-russo  tracking-wider text-amber-400 group-hover:text-amber-300 transition-colors">
                   GENERAL
                 </span>
-                <span className="font-russo text-xl tracking-wider text-white">
+                <span className="font-russo  tracking-wider text-white">
                   CHAMPIONSHIP
                 </span>
               </div>

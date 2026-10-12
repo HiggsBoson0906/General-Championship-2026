@@ -13,7 +13,7 @@ export const AppLayout: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-stone-950 text-slate-100 selection:bg-amber-500 selection:text-black">
       <Navbar />
 
-      <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="">
         {isLoading ? (
           <LoadingState message="Connecting to shared CSV tournament data..." />
         ) : error ? (

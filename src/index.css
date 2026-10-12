@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --font-russo: 'Russo One', sans-serif;
-  --font-serif-display: 'Libre Baskerville', serif;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-russo: "Russo One", sans-serif;
+  --font-serif-display: "Libre Baskerville", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 
   --color-brand-primary: #f59e0b; /* amber-500 */
   --color-brand-gold: #fbbf24;
@@ -13,7 +13,17 @@
 }
 
 :root {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
   color-scheme: dark;
 }
 
@@ -31,11 +41,18 @@
 }
 
 .glow-pill::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -2px;
   border-radius: 9999px;
-  background: linear-gradient(90deg, #f59e0b, #ef4444, #8b5cf6, #06b6d4, #f59e0b);
+  background: linear-gradient(
+    90deg,
+    #f59e0b,
+    #ef4444,
+    #8b5cf6,
+    #06b6d4,
+    #f59e0b
+  );
   background-size: 300% 300%;
   animation: glowAnimation 4s ease infinite;
   z-index: -1;
@@ -44,16 +61,48 @@
 }
 
 @keyframes glowAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes pulseSubtle {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.02); opacity: 0.9; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
 }
 
 .animate-pulse-subtle {
   animation: pulseSubtle 3s ease-in-out infinite;
+}
+.history-carousel .history-pagination .swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+  background: #78716c;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.history-carousel .history-pagination .swiper-pagination-bullet-active {
+  width: 22px;
+  border-radius: 9999px;
+  background: #fbbf24;
+  opacity: 1;
+}
+
+.history-carousel .swiper-button-lock,
+.history-carousel .swiper-pagination-lock {
+  display: none;
 }
