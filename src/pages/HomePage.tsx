@@ -3,23 +3,14 @@ import { Link } from 'react-router-dom';
 import {
   Trophy,
   Calendar,
-  Dumbbell,
-  ArrowRight,
-  Award,
-  ChevronRight,
-  Sparkles,
   Clock,
   MapPin,
   Star,
-  History,
-  Bird, Flame, Shield,
   Image as ImageIcon,
-  Dot,
 } from 'lucide-react';
 import { useTournament } from '../context/TournamentContext';
 import { Card } from '../components/common/Card';
 import { Badge } from '../components/common/Badge';
-import { Button } from '../components/common/Button';
 import { Modal } from '../components/common/Modal';
 import type { GalleryItem } from '../types';
 import { HeroSection } from '@/components/custom/HeroSection';
@@ -32,7 +23,6 @@ export const HomePage: React.FC = () => {
   const [selectedGalleryItem, setSelectedGalleryItem] = useState<GalleryItem | null>(null);
   const [galleryCategory, setGalleryCategory] = useState<string>('all');
   const matches = data?.matches ?? [];
-  const history = data?.history ?? [];
   const gallery = data?.gallery ?? [];
   const completedMatches = matches.filter((m) => m.status === 'completed');
   const upcomingMatches = matches.filter((m) => m.status === 'scheduled');

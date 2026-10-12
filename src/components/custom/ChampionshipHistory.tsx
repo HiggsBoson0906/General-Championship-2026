@@ -4,7 +4,6 @@ import { Card } from "../common/Card";
 import { Badge } from "../common/Badge";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
-import { ChevronLeft, ChevronRight, } from "lucide-react";
 
 import "swiper/css";
 import "swiper/css/navigation";

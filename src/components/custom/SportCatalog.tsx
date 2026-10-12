@@ -9,7 +9,6 @@ export const SportCatalog: React.FC = () => {
     const { data } = useTournament()
 
     const sports = data?.sports ?? []
-    const matches = data?.matches ?? [];
     return (
         <section className="space-y-6 p-4">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -33,8 +32,6 @@ export const SportCatalog: React.FC = () => {
 
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {sports.map((sport) => {
-                    const sportMatchList = matches.filter((m) => m.sportId === sport.id);
-                    const completedCount = sportMatchList.filter((m) => m.status === 'completed').length;
 
                     return (
                         <Link key={sport.id} to={`/sports/${sport.id}`} className="group block">
