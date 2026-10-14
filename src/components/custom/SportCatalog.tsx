@@ -10,7 +10,7 @@ export const SportCatalog: React.FC = () => {
 
     const sports = data?.sports ?? []
     return (
-        <section className="space-y-6 p-4">
+        <section className="space-y-6 p-4 lg:pt-0 lg:p-12">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div>
                     <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-widest mb-1">

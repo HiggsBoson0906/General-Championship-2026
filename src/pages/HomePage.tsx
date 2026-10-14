@@ -17,6 +17,8 @@ import { HeroSection } from '@/components/custom/HeroSection';
 import { LeaderBoard } from '@/components/custom/LeaderBoard';
 import { SportCatalog } from '@/components/custom/SportCatalog';
 import { ChampionshipHistory } from '@/components/custom/ChampionshipHistory';
+import PointAllocation from '@/components/custom/PointAllocation';
+import { Samar } from '@/components/custom/Samar';
 
 export const HomePage: React.FC = () => {
   const { data, getTeam, getSport } = useTournament();
@@ -43,7 +45,7 @@ export const HomePage: React.FC = () => {
       {/* samar */}
 
       {/* Recent Results & Upcoming Fixtures Row */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-4">
+      <section className="grid grid-cols-1 mb-0 lg:grid-cols-2 gap-8 p-4 lg:pt-0 lg:p-12">
         {/* Recent Results */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
@@ -167,11 +169,15 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
+      <PointAllocation />
+
+      <Samar />
       {/* Championship History Section */}
       <ChampionshipHistory />
 
+
       {/* Championship Photo Moments Gallery */}
-      <section className="space-y-6 p-4">
+      <section className="space-y-6 p-4 lg:pt-0 lg:p-12">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-widest mb-1">
@@ -186,7 +192,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 ">
             {galleryCategories.map((cat) => (
               <button
                 key={cat}
@@ -202,19 +208,19 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {filteredGallery.map((item) => (
+        <div className=" grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {filteredGallery.map((item, i) => (
             <Card
-              key={item.id}
+              key={i}
               hoverEffect
               onClick={() => setSelectedGalleryItem(item)}
-              className="p-3 space-y-2 cursor-pointer flex flex-col justify-between"
+              className={`p-3 gap-2 cursor-pointer flex flex-col justify-between ${i === 0 ? "col-span-2" : i === 6 ? "row-span-2" : ""} `}
             >
-              <div className="relative aspect-video rounded-xl overflow-hidden bg-stone-950 border border-stone-800">
+              <div className=" relative aspect-video rounded-xl overflow-hidden h-auto bg-stone-950 border border-stone-800">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover   group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-2 left-2">
                   <Badge variant="neutral" size="sm">

@@ -11,9 +11,9 @@ export const HeroSection: React.FC = () => {
     const completedMatches = matches.filter((m) => m.status === 'completed');
     const leader = standings[0];
     return (
-        <section className="relative  overflow-hidden  bg-[url('https://plus.unsplash.com/premium_photo-1661881970542-8447015772e8?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D')]  shadow-2xl bg-cover bg-no-repeat">
+        <section className="relative  overflow-hidden md:h-[60vh] h-[90vh] lg:h-screen   bg-[url('https://plus.unsplash.com/premium_photo-1661881970542-8447015772e8?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D')] lg:bg-[url('https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=2507&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D')] shadow-2xl bg-cover bg-no-repeat">
             <div className="absolute top-0 min-w-full h-screen bg-gradient-to-b from-black/30 to-black " />
-            <div className="relative z-10 max-w-4xl space-y-3 p-4 pt-24">
+            <div className="relative z-10 max-w-4xl space-y-3 p-4 pt-20 lg:p-12 lg:mt-24 ">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-sm font-semibold ">
                     General Championship 2026 Edition
                 </div>

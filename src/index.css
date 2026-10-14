@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-russo: "Russo One", sans-serif;
   --font-serif-display: "Libre Baskerville", serif;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+   --font-permanent: "Permanent Marker", cursive;
 
   --color-brand-primary: #f59e0b; /* amber-500 */
   --color-brand-gold: #fbbf24;

@@ -31,16 +31,16 @@ export const Navbar: React.FC = () => {
               <Trophy className="w-6 h-6 text-amber-400 absolute" />
             </div>
             <div>
-              <div className="flex items-center gap-2 text-lg">
-                <span className="font-russo  tracking-wider text-amber-400 group-hover:text-amber-300 transition-colors">
-                  GENERAL
+              <div className="flex items-center gap-2 text-lg  ">
+                <span className="font-russo   tracking-wider text-amber-400 group-hover:text-amber-300 transition-colors">
+                  <span className='md:hidden lg:block'> GENERAL</span> <span className='lg:hidden'>G</span>
                 </span>
                 <span className="font-russo  tracking-wider text-white">
-                  CHAMPIONSHIP
+                  <span className='md:hidden lg:block'> CHAMPIONSHIP</span> <span className='lg:hidden'>C</span>
                 </span>
               </div>
-              <p className="text-xs text-amber-200/60 font-medium tracking-widest uppercase">
-                2026 Season Edition
+              <p className=" text-amber-200/60 font-medium tracking-tighter uppercase">
+                <span className='md:text-xs  lg:block'> 2026 Season Edition</span>
               </p>
             </div>
           </Link>
@@ -53,10 +53,9 @@ export const Navbar: React.FC = () => {
                 to={item.to}
                 end={item.end}
                 className={({ isActive }) =>
-                  `relative px-4 py-2 rounded-xl text-sm font-bold tracking-wide transition-all duration-200 ${
-                    isActive
-                      ? 'text-amber-400 bg-amber-500/10 border border-amber-500/40 shadow-sm shadow-amber-500/10 font-russo'
-                      : 'text-stone-300 hover:text-white hover:bg-stone-900 border border-transparent'
+                  `relative px-4 py-2 rounded-xl text-sm font-bold tracking-wide transition-all duration-200 ${isActive
+                    ? 'text-amber-400 bg-amber-500/10 border border-amber-500/40 shadow-sm shadow-amber-500/10 font-russo'
+                    : 'text-stone-300 hover:text-white hover:bg-stone-900 border border-transparent'
                   }`
                 }
               >
@@ -105,10 +104,9 @@ export const Navbar: React.FC = () => {
               end={item.end}
               onClick={() => setMobileMenuOpen(false)}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold ${
-                  isActive
-                    ? 'text-amber-400 bg-amber-500/10 border border-amber-500/30'
-                    : 'text-stone-300 hover:text-white hover:bg-stone-900'
+                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold ${isActive
+                  ? 'text-amber-400 bg-amber-500/10 border border-amber-500/30'
+                  : 'text-stone-300 hover:text-white hover:bg-stone-900'
                 }`
               }
             >

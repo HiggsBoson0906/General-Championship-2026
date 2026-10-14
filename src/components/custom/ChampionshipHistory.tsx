@@ -14,7 +14,7 @@ export const ChampionshipHistory: React.FC = () => {
     const { data, getTeam } = useTournament()
     const history = data?.history ?? [];
     return (
-        <section className="space-y-6 p-4">
+        <section className="space-y-6 p-4 overflow-hidden lg:pt-0 lg:p-12">
             <div className="space-y-1">
                 <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-widest">
                     <History className="w-4 h-4" /> Tournament Legacy
