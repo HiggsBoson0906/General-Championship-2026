@@ -177,7 +177,7 @@ export const HomePage: React.FC = () => {
 
 
       {/* Championship Photo Moments Gallery */}
-      <section className="space-y-6 p-4 lg:pt-0 lg:p-12">
+      <section className="space-y-6 p-4 lg:pt-0 lg:p-12 ">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-widest mb-1">
@@ -192,7 +192,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap gap-2 ">
+          <div className="flex flex-wrap gap-2  ">
             {galleryCategories.map((cat) => (
               <button
                 key={cat}
@@ -208,19 +208,21 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
 
-        <div className=" grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="  grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {filteredGallery.map((item, i) => (
             <Card
               key={i}
               hoverEffect
               onClick={() => setSelectedGalleryItem(item)}
-              className={`p-3 gap-2 cursor-pointer flex flex-col justify-between ${i === 0 ? "col-span-2" : i === 6 ? "row-span-2" : ""} `}
+              className={`p-3 gap-2 cursor-pointer flex flex-col justify-between ${i === 0 ? "col-span-2 " : i === 6 ? "row-span-2" : i===7?"lg:col-span-3": ""} `}
             >
-              <div className=" relative aspect-video rounded-xl overflow-hidden h-auto bg-stone-950 border border-stone-800">
+
+              {/* image */}
+              <div className=" relative border flex border-stone-800">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="object-cover   group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover w-auto    group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-2 left-2">
                   <Badge variant="neutral" size="sm">
@@ -249,7 +251,7 @@ export const HomePage: React.FC = () => {
       >
         {selectedGalleryItem && (
           <div className="space-y-4">
-            <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-stone-950 border border-stone-800">
+            <div className="relative  aspect-video w-full rounded-2xl overflow-hidden bg-stone-950 border border-stone-800">
               <img
                 src={selectedGalleryItem.image}
                 alt={selectedGalleryItem.title}
