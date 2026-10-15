@@ -39,28 +39,23 @@ export const Footer: React.FC = () => {
           {/* Quick Navigation */}
           <div>
             <h4 className="text-xs font-bold text-stone-200 uppercase tracking-wider mb-3">
-              Navigation
+              Tournament Navigation
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/" className="hover:text-amber-400 transition-colors">
-                  Home Overview
-                </Link>
-              </li>
-              <li>
-                <Link to="/rankings" className="hover:text-amber-400 transition-colors">
-                  Leaderboard & Standings
-                </Link>
-              </li>
-              <li>
-                <Link to="/sports" className="hover:text-amber-400 transition-colors">
-                  Sports Catalog
-                </Link>
-              </li>
-              <li>
-                <Link to="/schedule" className="hover:text-amber-400 transition-colors">
+                <Link to="/schedule" className="hover:text-amber-400 text-amber-300 font-semibold transition-colors">
                   Match Schedule & Results
                 </Link>
+              </li>
+              <li>
+                <a
+                  href="/data/matches.csv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-400 transition-colors"
+                >
+                  Raw Fixtures Data (CSV)
+                </a>
               </li>
             </ul>
           </div>
