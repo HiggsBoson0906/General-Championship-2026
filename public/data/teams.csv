@@ -1,9 +1,17 @@
-id,name,short_name,department,image,primary_color,description
-team-red,Red Phoenix,RED,Mechanical & Aerospace Engineering,/assets/teams/team-red.svg,#ef4444,High-octane contenders celebrated for explosive offense and relentless team spirit.
-team-blue,Blue Titans,BLU,Computer Science & Data Engineering,/assets/teams/team-blue.svg,#3b82f6,Tactical powerhouses recognized for defensive grit and strategic composure under pressure.
-team-gold,Golden Eagles,GLD,Architecture & Industrial Design,/assets/teams/team-gold.svg,#f59e0b,Perennial title contenders showcasing championship pedigree and deep multi-sport rosters.
-team-green,Green Vipers,GRN,Electrical & Electronics Engineering,/assets/teams/team-green.svg,#10b981,Agile athletes distinguished by rapid transitions and unmatched court endurance.
-team-purple,Purple Knights,PUR,Civil & Infrastructure Engineering,/assets/teams/team-purple.svg,#8b5cf6,Disciplined competitors commanding exceptional presence across racquet and net sports.
-team-orange,Orange Blaze,ORG,Chemical & Materials Engineering,/assets/teams/team-orange.svg,#f97316,Energetic squad fueled by loud department backing and high-pressure pressing games.
-team-silver,Silver Wolves,SLV,Biotechnology & Applied Sciences,/assets/teams/team-silver.svg,#94a3b8,Calculating underdogs with technical proficiency in tactical and precision matches.
-team-cyan,Cyan Sharks,CYN,Management & Cognitive Sciences,/assets/teams/team-cyan.svg,#06b6d4,Dynamic unit known for fluid movement and precision teamwork across all matchups.
+id,name,teamCategory,short_name,department,image,primary_color,description
+team-red,Red Phoenix,Male,RED,Mechanical & Aerospace Engineering,/assets/teams/team-red.svg,#ef4444,High-octane contenders celebrated for explosive offense and relentless team spirit.
+team-blue,Blue Titans,Male,BLU,Computer Science & Data Engineering,/assets/teams/team-blue.svg,#3b82f6,Tactical powerhouses recognized for defensive grit and strategic composure under pressure.
+team-gold,Golden Eagles,Male,GLD,Architecture & Industrial Design,/assets/teams/team-gold.svg,#f59e0b,Perennial title contenders showcasing championship pedigree and deep multi-sport rosters.
+team-green,Green Vipers,Male,GRN,Electrical & Electronics Engineering,/assets/teams/team-green.svg,#10b981,Agile athletes distinguished by rapid transitions and unmatched court endurance.
+team-purple,Purple Knights,Male,PUR,Civil & Infrastructure Engineering,/assets/teams/team-purple.svg,#8b5cf6,Disciplined competitors commanding exceptional presence across racquet and net sports.
+team-orange,Orange Blaze,Male,ORG,Chemical & Materials Engineering,/assets/teams/team-orange.svg,#f97316,Energetic squad fueled by loud department backing and high-pressure pressing games.
+team-silver,Silver Wolves,Male,SLV,Biotechnology & Applied Sciences,/assets/teams/team-silver.svg,#94a3b8,Calculating underdogs with technical proficiency in tactical and precision matches.
+team-cyan,Cyan Sharks,Male,CYN,Management & Cognitive Sciences,/assets/teams/team-cyan.svg,#06b6d4,Dynamic unit known for fluid movement and precision teamwork across all matchups.
+team-pink,Pink Panthers,Female,PNK,Mechanical & Aerospace Engineering,/assets/teams/team-pink.svg,#ec4899,Confident competitors combining quick attacks with coordinated teamwork.
+team-violet,Violet Storm,Female,VIO,Computer Science & Data Engineering,/assets/teams/team-violet.svg,#a78bfa,Strategic players known for adaptability and disciplined execution.
+team-yellow,Yellow Falcons,Female,YFL,Architecture & Industrial Design,/assets/teams/team-yellow.svg,#eab308,Fast-moving contenders with strong communication and sharp tactical awareness.
+team-teal,Teal Warriors,Female,TEA,Electrical & Electronics Engineering,/assets/teams/team-teal.svg,#14b8a6,Resilient athletes with consistent performance and excellent coordination.
+team-rose,Rose Blazers,Female,ROS,Civil & Infrastructure Engineering,/assets/teams/team-rose.svg,#f43f5e,Determined competitors bringing energy and precision to every match.
+team-indigo,Indigo Hawks,Female,IND,Chemical & Materials Engineering,/assets/teams/team-indigo.svg,#6366f1,Versatile players with a focus on teamwork and smart decision-making.
+team-lime,Lime Lions,Female,LIM,Biotechnology & Applied Sciences,/assets/teams/team-lime.svg,#84cc16,Agile competitors who excel through speed, stamina, and collaboration.
+team-white,White Tigers,Female,WHT,Management & Cognitive Sciences,/assets/teams/team-white.svg,#e2e8f0,Focused athletes recognized for composure and reliable team performance.

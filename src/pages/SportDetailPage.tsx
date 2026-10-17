@@ -1,328 +1,190 @@
-import React, { useState, useMemo } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import {
-  ArrowLeft,
-  MapPin,
-  Calendar,
-  Star,
-  Trophy,
-  Clock,
-} from 'lucide-react';
-import { useTournament } from '../context/TournamentContext';
-import { Card } from '../components/common/Card';
-import { Badge } from '../components/common/Badge';
-import { EmptyState } from '../components/common/EmptyState';
+import { useState } from "react";
+import type { CSSProperties } from "react";
+import { Link, useParams } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { useTournament } from "../context/TournamentContext";
+import { NotFoundPage } from "../pages/NotFoundPage";
+import { Button } from "../components/common/Button";
+import GenderSwitch from "../components/common/GenderSwitch";
+import PreviousMatches from "../components/sports/PreviousMatches";
+import Standing from "../components/sports/Standing";
+import UpcomingMatches from "../components/sports/UpcomingMatches";
 
-export const SportDetailPage: React.FC = () => {
+interface ThemeStyle extends CSSProperties {
+  "--accent": string;
+  "--accent-rgb": string;
+}
+
+export default function SportsDetailPage() {
+  const { getSport, getMatches } = useTournament();
   const { sportId } = useParams<{ sportId: string }>();
-  const { getSport, getTeam, standings, data } = useTournament();
-  const [activeTab, setActiveTab] = useState<'matches' | 'standings'>('matches');
 
-  const sport = sportId ? getSport(sportId) : undefined;
-  const sportMatches = (data?.matches ?? []).filter((m) => m.sportId === sportId);
+  const [active, setActive] = useState<
+    "Standing" | "Upcoming" | "Previous"
+  >("Standing");
 
-  const completedMatches = sportMatches.filter((m) => m.status === 'completed');
-  const upcomingMatches = sportMatches.filter((m) => m.status === 'scheduled');
+  const [isMale, setIsMale] = useState(true);
 
-  // Compute sport-specific standings
-  const sportStandings = useMemo(() => {
-    if (!sport) return [];
+  const sportData = sportId ? getSport(sportId) : undefined;
 
-    const list = standings.map((s) => {
-      const breakdown = s.distributedPoints.find((dp) => dp.sportId === sport.id);
-      return {
-        teamId: s.teamId,
-        teamName: s.teamName,
-        shortName: s.shortName,
-        department: s.department,
-        primaryColor: s.primaryColor,
-        points: breakdown?.points ?? 0,
-        matchesPlayed: breakdown?.matchesPlayed ?? 0,
-        wins: breakdown?.wins ?? 0,
-      };
-    });
-
-    // Sort by points descending, then wins descending
-    list.sort((a, b) => {
-      if (b.points !== a.points) return b.points - a.points;
-      return b.wins - a.wins;
-    });
-
-    return list;
-  }, [sport, standings]);
-
-  if (!sport) {
-    return (
-      <EmptyState
-        title="Sport Not Found"
-        description={`The requested sport discipline "${sportId}" does not exist in championship data.`}
-        action={
-          <Link to="/sports">
-            <button className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold rounded-xl text-xs inline-flex items-center gap-1.5 cursor-pointer">
-              <ArrowLeft className="w-4 h-4" /> Back to Sports Directory
-            </button>
-          </Link>
-        }
-      />
-    );
+  if (!sportData) {
+    return <NotFoundPage />;
   }
 
+  const sportGender = isMale ? ["Male"] : ["Female"];
+
+  const matchData = sportId
+    ? getMatches(sportId, sportGender)
+    : [];
+
+  const themeStyle: ThemeStyle = {
+    "--accent": isMale ? "#60a5fa" : "#f0abfc",
+    "--accent-rgb": isMale ? "96, 165, 250" : "240, 171, 252",
+  };
+
+  const navButtonClass =
+    "relative rounded-[10px] border px-5 py-3 text-sm font-[650] transition-[color,background-color,border-color,transform] duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:text-white focus-visible:outline-2 focus-visible:outline-[var(--accent)] focus-visible:outline-offset-[3px] max-[600px]:flex-1 max-[600px]:px-2.5 max-[600px]:py-3 max-[600px]:text-xs";
+
+  const getNavButtonClass = (
+    tab: "Standing" | "Upcoming" | "Previous"
+  ) =>
+    `${navButtonClass} ${
+      active === tab
+        ? "border-[rgba(var(--accent-rgb),0.35)] bg-[rgba(var(--accent-rgb),0.16)] text-white shadow-[inset_0_0_20px_rgba(var(--accent-rgb),0.05)]"
+        : "border-transparent bg-transparent text-[#9caec4] hover:bg-white/[0.06]"
+    }`;
+
   return (
-    <div className="space-y-10">
-      {/* Back button */}
-      <div>
-        <Link
-          to="/sports"
-          className="inline-flex items-center gap-2 text-xs font-semibold text-stone-400 hover:text-amber-400 transition-colors"
+    <>
+      <Link to="/sports" className="mb-5 inline-block">
+        <Button
+          variant="outline"
+          size="md"
+          className="gap-2 rounded-xl border-amber-500/40 bg-amber-500/[0.06] px-4 py-2 text-sm text-amber-400 shadow-sm shadow-amber-500/5 transition-all duration-300 hover:border-amber-400/70 hover:bg-amber-500/15 hover:text-amber-300"
         >
-          <ArrowLeft className="w-4 h-4" /> Back to All Sports
-        </Link>
-      </div>
+          <ArrowLeft size={16} />
+          Back to Sports
+        </Button>
+      </Link>
 
-      {/* Hero Header */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-stone-900 via-amber-950/40 to-stone-950 border border-amber-900/40 p-8 sm:p-12 shadow-xl">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
-          <div className="space-y-3">
-            <div className="flex flex-wrap items-center gap-2.5">
-              <Badge variant="gold">{sport.category}</Badge>
-              <span className="text-xs text-stone-400 flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-amber-500" /> {sport.venue}
-              </span>
-            </div>
-
-            <h1 className="text-3xl sm:text-5xl font-black font-russo text-white tracking-wide">
-              {sport.title}
-            </h1>
-
-            <p className="text-sm sm:text-base text-stone-300 max-w-2xl leading-relaxed">
-              {sport.description}
-            </p>
-          </div>
-
-          <div className="p-5 bg-stone-950/80 rounded-2xl border border-stone-800 text-center shrink-0 shadow-md">
-            <span className="text-xs uppercase font-bold text-stone-400 tracking-wider block">
-              Discipline Weight
-            </span>
-            <span className="text-4xl font-black font-russo text-amber-400 block mt-1">
-              {sport.maxPoints} PTS
-            </span>
-            <span className="text-xs text-stone-500 block mt-1">
-              {completedMatches.length} / {sportMatches.length} Completed
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* Tabs */}
-      <div className="flex items-center gap-3 border-b border-stone-800 pb-3">
-        <button
-          onClick={() => setActiveTab('matches')}
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer inline-flex items-center gap-2 ${
-            activeTab === 'matches'
-              ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/20'
-              : 'text-stone-400 hover:text-white bg-stone-900'
-          }`}
+      <div
+        style={themeStyle}
+        className={`relative isolate min-h-screen w-full min-w-0 px-[clamp(16px,4vw,56px)] pb-12 pt-8 text-[#f8fafc] transition-[background] duration-[400ms] ease-in-out max-[600px]:px-[14px] max-[600px]:pb-8 max-[600px]:pt-5 ${
+          isMale
+            ? "bg-[radial-gradient(ellipse_at_10%_0%,rgba(96,165,250,0.16),transparent_45%),linear-gradient(145deg,#080f1e_0%,#101a2d_55%,#0b1220_100%)]"
+            : "bg-[radial-gradient(ellipse_at_90%_0%,rgba(240,171,252,0.17),transparent_45%),linear-gradient(145deg,#150d20_0%,#21132e_55%,#100f20_100%)]"
+        } motion-reduce:transition-none`}
+      >
+        <div
+          className="relative isolate mb-7 w-full min-w-0 max-w-[900px] overflow-hidden rounded-3xl border border-[rgb(39,57,79)] bg-cover bg-center p-[clamp(22px,4vw,38px)] shadow-[0_18px_50px_rgba(0,0,0,0.18)] max-[600px]:rounded-[18px] max-[600px]:px-[18px] max-[600px]:py-[22px]"
+          style={{
+            backgroundImage: sportData.bannerImg
+              ? `linear-gradient(90deg, rgba(15,23,42,0.94), rgba(15,23,42,0.72)), url("${sportData.bannerImg}")`
+              : "linear-gradient(145deg, rgba(30,41,59,0.95), rgba(15,23,42,0.95))",
+            backgroundPosition: "center",
+          }}
         >
-          <Calendar className="w-3.5 h-3.5" />
-          Fixtures & Results ({sportMatches.length})
-        </button>
-
-        <button
-          onClick={() => setActiveTab('standings')}
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer inline-flex items-center gap-2 ${
-            activeTab === 'standings'
-              ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/20'
-              : 'text-stone-400 hover:text-white bg-stone-900'
-          }`}
-        >
-          <Trophy className="w-3.5 h-3.5" />
-          Sport Standings
-        </button>
-      </div>
-
-      {/* Tab Content: Matches */}
-      {activeTab === 'matches' && (
-        <div className="space-y-8">
-          {/* Completed Section */}
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <h3 className="text-lg font-bold font-russo text-white flex items-center gap-2">
-                <Trophy className="w-4 h-4 text-amber-400" /> Completed Results ({completedMatches.length})
-              </h3>
-              <Badge variant="completed" size="sm">Points Allocated</Badge>
+          <div className="flex flex-wrap items-center justify-between gap-[18px] max-[475px]:flex-col max-[475px]:items-start">
+            <div className="text-[clamp(30px,4vw,46px)] font-extrabold leading-[1.15] tracking-[-1.5px] text-white max-[600px]:tracking-[-0.8px]">
+              {sportData.title}
             </div>
+            {sportData.venue && (
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-2.5 py-[5px] text-[13px] text-[#cbd5e1]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960"
+                  className="h-[18px] w-[18px] shrink-0 fill-[var(--accent)]"
+                  aria-hidden="true"
+                >
+                  <path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z" />
+                </svg>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {completedMatches.map((m) => {
-                const team1 = getTeam(m.team1Id);
-                const team2 = m.team2Id ? getTeam(m.team2Id) : null;
-                const winner = m.winnerId ? getTeam(m.winnerId) : null;
-
-                return (
-                  <Card key={m.id} className="p-5 space-y-3">
-                    <div className="flex items-center justify-between text-xs text-stone-400 border-b border-stone-800 pb-2">
-                      <span className="font-bold text-amber-400">{m.stage}</span>
-                      <span>{m.date} • {m.time}</span>
-                    </div>
-
-                    <div className="flex items-center justify-between py-1">
-                      <div className="space-y-1.5 flex-1 pr-4">
-                        <div className="flex items-center justify-between">
-                          <Link
-                            to={`/teams/${team1?.id}`}
-                            className={`font-semibold text-sm hover:underline ${
-                              winner?.id === team1?.id ? 'text-amber-400 font-bold' : 'text-white'
-                            }`}
-                          >
-                            {team1?.name}
-                          </Link>
-                          {m.scoreTeam1 && (
-                            <span className="font-mono text-xs font-bold text-stone-300">
-                              {m.scoreTeam1}
-                            </span>
-                          )}
-                        </div>
-
-                        {team2 && (
-                          <div className="flex items-center justify-between">
-                            <Link
-                              to={`/teams/${team2.id}`}
-                              className={`font-semibold text-sm hover:underline ${
-                                winner?.id === team2?.id ? 'text-amber-400 font-bold' : 'text-white'
-                              }`}
-                            >
-                              {team2.name}
-                            </Link>
-                            {m.scoreTeam2 && (
-                              <span className="font-mono text-xs font-bold text-stone-300">
-                                {m.scoreTeam2}
-                              </span>
-                            )}
-                          </div>
-                        )}
-                      </div>
-
-                      <div className="text-right shrink-0">
-                        <Badge variant="completed" size="sm">
-                          Winner: {winner?.shortName ?? 'N/A'} (+{m.pointsAwarded} pts)
-                        </Badge>
-                      </div>
-                    </div>
-
-                    {m.mvpName && (
-                      <div className="pt-2 border-t border-stone-800/60 flex items-center justify-between text-xs text-amber-300/80">
-                        <span className="flex items-center gap-1">
-                          <Star className="w-3.5 h-3.5 text-amber-400" /> MVP: {m.mvpName}
-                        </span>
-                        {m.mvpTitle && <span className="text-stone-400">{m.mvpTitle}</span>}
-                      </div>
-                    )}
-                  </Card>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Upcoming Section */}
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <h3 className="text-lg font-bold font-russo text-white flex items-center gap-2">
-                <Clock className="w-4 h-4 text-amber-400" /> Upcoming Fixtures ({upcomingMatches.length})
-              </h3>
-              <Badge variant="scheduled" size="sm">Scheduled</Badge>
-            </div>
-
-            {upcomingMatches.length === 0 ? (
-              <div className="p-8 text-center text-stone-500 border border-dashed border-stone-800 rounded-2xl text-xs">
-                All fixtures for this sport have concluded.
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {upcomingMatches.map((m) => {
-                  const team1 = getTeam(m.team1Id);
-                  const team2 = m.team2Id ? getTeam(m.team2Id) : null;
-
-                  return (
-                    <Card key={m.id} className="p-5 space-y-3">
-                      <div className="flex items-center justify-between text-xs text-stone-400 border-b border-stone-800 pb-2">
-                        <span className="font-bold text-amber-400">{m.stage}</span>
-                        <Badge variant="scheduled" size="sm">Scheduled</Badge>
-                      </div>
-
-                      <div className="text-base font-bold text-white py-1">
-                        {team1?.name} <span className="text-stone-500 font-normal">vs</span> {team2?.name ?? 'TBD'}
-                      </div>
-
-                      <div className="flex items-center justify-between text-xs text-stone-400 pt-2 border-t border-stone-800/60">
-                        <span className="flex items-center gap-1.5">
-                          <Calendar className="w-3.5 h-3.5 text-stone-500" /> {m.date} at {m.time}
-                        </span>
-                        <span className="flex items-center gap-1.5">
-                          <MapPin className="w-3.5 h-3.5 text-stone-500" /> {m.venue}
-                        </span>
-                      </div>
-                    </Card>
-                  );
-                })}
+                <span>{sportData.venue}</span>
               </div>
             )}
           </div>
-        </div>
-      )}
+          {sportData.description && (
+            <p className="mt-[18px] max-w-[760px] text-[15px] leading-[1.8] text-[#aab8cc]">
+              {sportData.description}
+            </p>
+          )}
+          <div className="mt-5 flex items-center gap-2.5 text-[var(--accent)]">
+            {(sportData.sportCategory?.length ?? 0) > 1 ? (
+              <GenderSwitch
+                isMale={isMale}
+                setIsMale={setIsMale}
+              />
+            ) : (
+              <>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960"
+                  className="h-[18px] w-[18px] fill-current"
+                  aria-hidden="true"
+                >
+                  <path d="M367-527q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm296.5-343.5Q560-607 560-640t-23.5-56.5Q513-720 480-720t-56.5 23.5Q400-673 400-640t23.5 56.5Q447-560 480-560t56.5-23.5ZM480-640Zm0 400Z" />
+                </svg>
 
-      {/* Tab Content: Standings */}
-      {activeTab === 'standings' && (
-        <Card className="overflow-hidden p-0 border-stone-800 shadow-xl">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-stone-950 text-xs font-bold text-stone-400 uppercase tracking-wider border-b border-stone-800">
-                <tr>
-                  <th scope="col" className="px-6 py-4">Rank</th>
-                  <th scope="col" className="px-6 py-4">Team</th>
-                  <th scope="col" className="px-4 py-4 text-center">Played</th>
-                  <th scope="col" className="px-4 py-4 text-center">Wins</th>
-                  <th scope="col" className="px-6 py-4 text-right">Points in {sport.title}</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-stone-800/80 font-medium">
-                {sportStandings.map((s, index) => (
-                  <tr key={s.teamId} className="hover:bg-stone-800/40 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap font-russo text-amber-400">
-                      #{index + 1}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <Link
-                        to={`/teams/${s.teamId}`}
-                        className="group flex items-center gap-3"
-                      >
-                        <div
-                          className="w-3.5 h-3.5 rounded-full shrink-0"
-                          style={{ backgroundColor: s.primaryColor }}
-                        />
-                        <div>
-                          <div className="text-white font-bold group-hover:text-amber-400 transition-colors">
-                            {s.teamName}
-                          </div>
-                          <div className="text-xs text-stone-400">{s.department}</div>
-                        </div>
-                      </Link>
-                    </td>
-                    <td className="px-4 py-4 text-center text-stone-300">
-                      {s.matchesPlayed}
-                    </td>
-                    <td className="px-4 py-4 text-center text-emerald-400 font-bold">
-                      {s.wins}
-                    </td>
-                    <td className="px-6 py-4 text-right whitespace-nowrap font-russo text-lg text-amber-400 font-bold">
-                      {s.points} PTS
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                <span className="text-base text-[var(--accent)]">
+                  {sportData.sportCategory[0].charAt(0).toUpperCase() +
+                    sportData.sportCategory[0].slice(1)}
+                </span>
+              </>
+            )}
           </div>
-        </Card>
-      )}
-    </div>
+        </div>
+
+        <div className="mb-6 flex w-fit max-w-full flex-wrap gap-2 rounded-[14px] border border-white/[0.08] bg-white/[0.045] p-1 max-[600px]:w-full">
+          <button
+            type="button"
+            className={getNavButtonClass("Standing")}
+            onClick={() => setActive("Standing")}
+          >
+            Standings
+          </button>
+
+          <button
+            type="button"
+            className={getNavButtonClass("Upcoming")}
+            onClick={() => setActive("Upcoming")}
+          >
+            Upcoming Matches
+          </button>
+
+          <button
+            type="button"
+            className={getNavButtonClass("Previous")}
+            onClick={() => setActive("Previous")}
+          >
+            Previous Matches
+          </button>
+        </div>
+
+        <div className="relative w-full min-w-0 text-[#f8fafc]">
+          {active === "Upcoming" && (
+            <UpcomingMatches
+              matches={matchData.filter(
+                (match) =>
+                  match.status !== "completed" &&
+                  match.status !== "cancelled"
+              )}
+            />
+          )}
+          {active === "Previous" && (
+            <PreviousMatches
+              matches={matchData.filter(
+                (match) => match.status === "completed"
+              )}
+            />
+          )}
+          {active === "Standing" && (
+            <Standing
+              sportId={sportId}
+              sportGender={sportGender}
+            />
+          )}
+        </div>
+      </div>
+    </>
   );
-};
+}

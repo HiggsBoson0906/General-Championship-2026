@@ -1,7 +1,14 @@
-id,title,category,description,image,venue,max_points
-football,Football,Team Sport,11-a-side inter-department championship played on natural grass turf with standard FIFA rules.,/assets/sports/football.svg,Main Stadium Ground,30
-cricket,Cricket,Team Sport,Exciting T20 format tournament on a prepared central wicket featuring intense department rivalries.,/assets/sports/cricket.svg,University Cricket Oval,35
-basketball,Basketball,Team Sport,High-tempo 5v5 full-court basketball showdown under collegiate FIBA championship rules.,/assets/sports/basketball.svg,Indoor Sports Complex Court 1,25
-volleyball,Volleyball,Team Sport,Dynamic 6v6 aerial battles featuring powerful spikes and coordinated defensive blocks.,/assets/sports/volleyball.svg,Outdoor Volleyball Arena,20
-badminton,Badminton,Racquet,Fast-paced synthetic indoor court championship featuring singles and doubles departmental ties.,/assets/sports/badminton.svg,Badminton Arena Courts 1-3,20
-table-tennis,Table Tennis,Racquet,Rapid reflex table tennis tournament spanning intense singles encounters and doubles rubbers.,/assets/sports/table-tennis.svg,Table Tennis Hall,15
+id,title,sportCategory,category,description,image,bannerImg,venue,max_points
+football,Football,Male;Female,Team Sport,11-a-side inter-department championship played on natural grass turf with standard FIFA rules.,/assets/sports/football.png,/assets/banners/football.png,Main Stadium Ground,30
+cricket,Cricket,Male,Team Sport,Exciting T20 format tournament on a prepared central wicket featuring intense department rivalries.,/assets/sports/cricket.png,/assets/banners/cricket.png,University Cricket Oval,35
+basketball,Basketball,Male;Female,Team Sport,High-tempo 5v5 full-court basketball showdown under collegiate FIBA championship rules.,/assets/sports/basketball.png,/assets/banners/basketball.png,Indoor Sports Complex Court 1,25
+volleyball,Volleyball,Male;Female,Team Sport,Dynamic 6v6 aerial battles featuring powerful spikes and coordinated defensive blocks.,/assets/sports/volleyball.png,/assets/banners/volleyball.png,Outdoor Volleyball Arena,20
+badminton,Badminton,Male;Female,Racquet,Fast-paced synthetic indoor court championship featuring singles and doubles departmental ties.,/assets/sports/badminton.png,/assets/banners/badminton.png,Badminton Arena Courts 1-3,20
+table-tennis,Table Tennis,Male;Female,Racquet,Rapid reflex table tennis tournament spanning intense singles encounters and doubles rubbers.,/assets/sports/table-tennis.png,/assets/banners/table-tennis.png,Table Tennis Hall,15
+athletics,Athletics,Male;Female,Individual Sport,Track and field competitions including sprinting middle-distance running relays jumping and throwing events.,/assets/sports/athletics.png,/assets/banners/athletics.png,University Athletics Track,30
+chess,Chess,Male;Female,Indoor Sport,Strategic inter-department chess championship emphasizing tactical calculation positional play and time management.,/assets/sports/chess.png,/assets/banners/chess.png,Indoor Sports Complex Hall,15
+kabaddi,Kabaddi,Male;Female,Team Sport,Competitive team kabaddi featuring raids tackles and coordinated defensive strategies under standard rules.,/assets/sports/kabaddi.png,/assets/banners/kabaddi.png,Main Sports Ground,25
+kho-kho,Kho Kho,Male;Female,Team Sport,Fast-paced traditional Indian team sport testing speed agility teamwork and tactical chasing.,/assets/sports/kho-kho.png,/assets/banners/kho-kho.png,Outdoor Kho Kho Ground,20
+tug-of-war,Tug of War,Male;Female,Team Sport,Departmental strength and coordination contest where teams compete to pull the opposing side across the center line.,/assets/sports/tug-of-war.png,/assets/banners/tug-of-war.png,University Sports Ground,15
+yoga,Yoga,Male;Female,Individual Sport,Competition assessing posture balance flexibility breathing control and precision across prescribed yoga routines.,/assets/sports/yoga.png,/assets/banners/yoga.png,Indoor Yoga Hall,15
+power-lifting,Power Lifting,Male;Female,Individual Sport,Strength competition featuring squat bench press and deadlift events with performance judged under standard rules.,/assets/sports/power-lifting.png,/assets/banners/power-lifting.png,Weight Training Arena,25

@@ -1,0 +1,14 @@
+sportId,cardColor,cardLight,cardIcon
+cricket,#10a66a,#e4f8d9,Goal
+football,#1677ff,#dceaff,Volleyball
+volleyball,#8338ec,#eee3ff,Volleyball
+basketball,#ff8500,#ffebd5,Volleyball
+badminton,#ff3185,#ffe0ef,Zap
+table-tennis,#08bfc3,#d9f8f8,BetweenHorizontalEnd
+athletics,#ffad00,#fff2cf,Footprints
+chess,#5146f5,#e2e0ff,ChessKnight
+kabaddi,#ef4444,#fee2e2,Users
+kho-kho,#f97316,#ffedd5,Footprints
+tug-of-war,#8b5cf6,#ede9fe,Users
+yoga,#0ea5e9,#e0f2fe,PersonStanding
+power-lifting,#d97706,#fef3c7,Goal

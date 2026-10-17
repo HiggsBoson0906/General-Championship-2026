@@ -1,16 +1,15 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { TournamentProvider } from './context/TournamentContext';
-import { AppLayout } from './components/layout/AppLayout';
-import { HomePage } from './pages/HomePage';
-import { RankingsPage } from './pages/RankingsPage';
-import { TeamDetailPage } from './pages/TeamDetailPage';
-import { SportsPage } from './pages/SportsPage';
-import { SportDetailPage } from './pages/SportDetailPage';
-import { SchedulePage } from './pages/SchedulePage';
-import { NotFoundPage } from './pages/NotFoundPage';
+import { AppLayout } from "./components/layout/AppLayout";
+import { HomePage } from "./pages/HomePage";
+import { RankingsPage } from "./pages/RankingsPage";
+import { TeamDetailPage } from "./pages/TeamDetailPage";
+import SportsPage from "./pages/SportsPage";
+import SportDetailPage from "./pages/SportDetailPage";
+import { SchedulePage } from "./pages/SchedulePage";
+import { NotFoundPage } from "./pages/NotFoundPage";
 
-export const App: React.FC = () => {
+export default function AppRoutes() {
   return (
     <BrowserRouter>
       <TournamentProvider>
@@ -28,6 +27,4 @@ export const App: React.FC = () => {
       </TournamentProvider>
     </BrowserRouter>
   );
-};
-
-export default App;
+}

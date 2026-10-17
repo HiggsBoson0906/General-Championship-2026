@@ -8,6 +8,7 @@ import type {
   CsvValidationError,
   Team,
   Sport,
+  Match
 } from '../types';
 
 interface TournamentContextValue {
@@ -20,7 +21,10 @@ interface TournamentContextValue {
   updateScoringConfig: (config: Partial<ScoringConfig>) => void;
   refetch: () => Promise<void>;
   getTeam: (id: string) => Team | undefined;
+  getTeams: (teamCategory: string[]) => Team[];
   getSport: (id: string) => Sport | undefined;
+  getAllSports: () => Sport[];
+  getMatches: (sportId: string, matchCategory: string[]) => Match[];
 }
 
 const TournamentContext = createContext<TournamentContextValue | undefined>(undefined);
@@ -65,6 +69,23 @@ export const TournamentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     [data]
   );
 
+  const getAllSports = useCallback(
+    () => data?.sports ?? [],
+    [data]
+  );
+
+  const getMatches = useCallback(
+    (sportId: string, matchCategory: string[]) =>
+      data?.matches.filter((match) => match.sportId === sportId && matchCategory.includes(match.matchCategory)) ?? [],
+    [data]
+  );
+
+  const getTeams = useCallback(
+    (teamCategory: string[]) =>
+      data?.teams.filter((team) => teamCategory.includes(team.teamCategory)) ?? [],
+    [data]
+  );
+
   const updateScoringConfig = useCallback((newConfig: Partial<ScoringConfig>) => {
     setScoringConfig((prev) => ({ ...prev, ...newConfig }));
   }, []);
@@ -80,9 +101,12 @@ export const TournamentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       updateScoringConfig,
       refetch: () => fetchData(true),
       getTeam,
+      getTeams,
       getSport,
+      getAllSports,
+      getMatches,
     }),
-    [data, standings, isLoading, error, validationErrors, scoringConfig, updateScoringConfig, fetchData, getTeam, getSport]
+    [data, standings, isLoading, error, validationErrors, scoringConfig, updateScoringConfig, fetchData, getTeam, getTeams, getSport, getAllSports, getMatches]
   );
 
   return <TournamentContext.Provider value={value}>{children}</TournamentContext.Provider>;

@@ -1,37 +1,201 @@
-id,sport_id,date,time,venue,stage,team1_id,team2_id,winner_id,points_awarded,status,score_team1,score_team2,mvp_name,mvp_title,mvp_image
-m-fb-01,football,2025-09-24,16:00,Main Stadium Ground,Quarter-Final 1,team-red,team-blue,team-red,8,completed,2,1,Aarav Sharma,Clinical Striker,/assets/gallery/football-save.svg
-m-fb-02,football,2025-09-24,18:00,Main Stadium Ground,Quarter-Final 2,team-gold,team-green,team-gold,8,completed,3,2,Vikram Rathore,Midfield Playmaker,/assets/gallery/football-save.svg
-m-fb-03,football,2025-09-25,16:00,Main Stadium Ground,Quarter-Final 3,team-purple,team-orange,team-purple,8,completed,1,0,Rohan Iyer,Defensive Anchor,/assets/gallery/football-save.svg
-m-fb-04,football,2025-09-26,17:00,Main Stadium Ground,Semi-Final 1,team-red,team-purple,team-red,10,completed,2,0,Kabir Khan,Golden Boot Winner,/assets/gallery/football-save.svg
-m-fb-05,football,2025-09-28,16:30,Main Stadium Ground,Final,team-red,team-gold,team-gold,15,completed,1,2,Aryan Sen,Match Winner,/assets/gallery/football-save.svg
-m-fb-06,football,2026-10-18,16:00,Main Stadium Ground,League Clash,team-silver,team-cyan,,0,scheduled,,,,,
-m-ck-01,cricket,2025-09-22,09:30,University Cricket Oval,Group Match A,team-blue,team-gold,team-blue,8,completed,164/4 (20 ov),158/8 (20 ov),Dev Patel,Match Winning 72,/assets/gallery/cricket-trophy.svg
-m-ck-02,cricket,2025-09-23,13:30,University Cricket Oval,Group Match B,team-green,team-purple,team-green,8,completed,142/6 (20 ov),138/9 (20 ov),Siddharth V,Death Overs Specialist,/assets/gallery/cricket-trophy.svg
-m-ck-03,cricket,2025-09-25,09:30,University Cricket Oval,Semi-Final 1,team-blue,team-silver,team-blue,10,completed,180/3 (20 ov),145/8 (20 ov),Karan Malhotra,Century Knock 102*,/assets/gallery/cricket-trophy.svg
-m-ck-04,cricket,2025-09-26,13:30,University Cricket Oval,Semi-Final 2,team-gold,team-red,team-gold,10,completed,172/5 (20 ov),169/7 (20 ov),Aditya Verma,All-Round MVP,/assets/gallery/cricket-trophy.svg
-m-ck-05,cricket,2025-09-29,14:00,University Cricket Oval,Championship Final,team-blue,team-gold,team-gold,20,completed,152/9 (20 ov),155/4 (18.4 ov),Nikhil Joshi,Finals Captain Knock,/assets/gallery/cricket-trophy.svg
-m-ck-06,cricket,2026-10-19,09:30,University Cricket Oval,Exhibition Opener,team-orange,team-cyan,,0,scheduled,,,,,
-m-bb-01,basketball,2025-09-23,17:00,Indoor Sports Complex Court 1,Quarter-Final 1,team-red,team-green,team-red,6,completed,74,68,Tarun Nair,Point Guard Maestro,/assets/gallery/basketball-shot.svg
-m-bb-02,basketball,2025-09-23,19:00,Indoor Sports Complex Court 1,Quarter-Final 2,team-blue,team-cyan,team-blue,6,completed,62,54,Rishi Mehta,Rebound King,/assets/gallery/basketball-shot.svg
-m-bb-03,basketball,2025-09-25,18:00,Indoor Sports Complex Court 1,Semi-Final 1,team-red,team-orange,team-red,8,completed,80,71,Samir Roy,Top Scorer 28 pts,/assets/gallery/basketball-shot.svg
-m-bb-04,basketball,2025-09-26,18:00,Indoor Sports Complex Court 1,Semi-Final 2,team-gold,team-blue,team-gold,8,completed,69,65,Manav Chawla,Clutch 3-Pointer,/assets/gallery/basketball-shot.svg
-m-bb-05,basketball,2025-09-28,18:30,Indoor Sports Complex Court 1,Gold Medal Game,team-red,team-gold,team-red,12,completed,82,79,Aarav Sharma,Tournament MVP,/assets/gallery/basketball-shot.svg
-m-bb-06,basketball,2026-10-20,18:00,Indoor Sports Complex Court 1,Bronze Playoff,team-purple,team-silver,,0,scheduled,,,,,
-m-vb-01,volleyball,2025-09-22,16:00,Outdoor Volleyball Arena,Preliminary Round 1,team-green,team-orange,team-green,6,completed,3,1,Pranav Rao,Power Spiker,/assets/gallery/volleyball-spike.svg
-m-vb-02,volleyball,2025-09-23,16:00,Outdoor Volleyball Arena,Preliminary Round 2,team-purple,team-cyan,team-purple,6,completed,3,0,Zayd Ali,Defensive Libero,/assets/gallery/volleyball-spike.svg
-m-vb-03,volleyball,2025-09-24,17:00,Outdoor Volleyball Arena,Semi-Final 1,team-green,team-red,team-green,8,completed,3,2,Pranav Rao,Ace Server,/assets/gallery/volleyball-spike.svg
-m-vb-04,volleyball,2025-09-25,17:00,Outdoor Volleyball Arena,Semi-Final 2,team-blue,team-purple,team-blue,8,completed,3,1,Kunal Ghosh,Middle Blocker,/assets/gallery/volleyball-spike.svg
-m-vb-05,volleyball,2025-09-27,17:00,Outdoor Volleyball Arena,Championship Match,team-green,team-blue,team-green,10,completed,3,2,Harsh Vardhan,Deciding Set Finisher,/assets/gallery/volleyball-spike.svg
-m-vb-06,volleyball,2026-10-21,16:30,Outdoor Volleyball Arena,Showcase Match,team-gold,team-silver,,0,scheduled,,,,,
-m-bd-01,badminton,2025-09-22,10:00,Badminton Arena Courts 1-3,Round of 16,team-purple,team-silver,team-purple,5,completed,2,1,Tanmay Deshmukh,Singles Ace,/assets/gallery/badminton-rally.svg
-m-bd-02,badminton,2025-09-23,11:00,Badminton Arena Courts 1-3,Quarter-Final 1,team-gold,team-cyan,team-gold,6,completed,2,0,Varun Kapoor,Smash Master,/assets/gallery/badminton-rally.svg
-m-bd-03,badminton,2025-09-24,10:30,Badminton Arena Courts 1-3,Semi-Final 1,team-purple,team-green,team-purple,8,completed,2,1,Tanmay Deshmukh,Net Play Virtuoso,/assets/gallery/badminton-rally.svg
-m-bd-04,badminton,2025-09-25,11:30,Badminton Arena Courts 1-3,Semi-Final 2,team-gold,team-red,team-gold,8,completed,2,0,Ishan Saxena,Dropshot Specialist,/assets/gallery/badminton-rally.svg
-m-bd-05,badminton,2025-09-27,11:00,Badminton Arena Courts 1-3,Gold Final,team-purple,team-gold,team-purple,10,completed,2,1,Tanmay Deshmukh,Singles Champion,/assets/gallery/badminton-rally.svg
-m-bd-06,badminton,2026-10-22,10:00,Badminton Arena Courts 1-3,Group Tie,team-blue,team-orange,,0,scheduled,,,,,
-m-tt-01,table-tennis,2025-09-22,14:00,Table Tennis Hall,First Round,team-silver,team-orange,team-silver,5,completed,3,1,Dhruv Singhal,Top Spin Dominator,/assets/gallery/table-tennis-forehand.svg
-m-tt-02,table-tennis,2025-09-23,14:00,Table Tennis Hall,Quarter-Final,team-cyan,team-blue,team-blue,6,completed,1,3,Rohan Batra,Backhand Wizard,/assets/gallery/table-tennis-forehand.svg
-m-tt-03,table-tennis,2025-09-24,15:00,Table Tennis Hall,Semi-Final 1,team-silver,team-green,team-silver,7,completed,3,2,Dhruv Singhal,Five-Set Winner,/assets/gallery/table-tennis-forehand.svg
-m-tt-04,table-tennis,2025-09-25,15:00,Table Tennis Hall,Semi-Final 2,team-red,team-blue,team-red,7,completed,3,0,Aman Gupta,Flick Specialist,/assets/gallery/table-tennis-forehand.svg
-m-tt-05,table-tennis,2025-09-28,15:00,Table Tennis Hall,Grand Final,team-silver,team-red,team-silver,10,completed,3,2,Dhruv Singhal,Gold Medalist TT,/assets/gallery/table-tennis-forehand.svg
-m-tt-06,table-tennis,2026-10-23,14:30,Table Tennis Hall,Consolation Rubber,team-gold,team-purple,,0,scheduled,,,,,
+id,sport_id,matchCategory,date,time,venue,stage,team1_id,team2_id,winner_id,points_awarded,status,score_team1,score_team2,mvp_name,mvp_title,mvp_image
+extra-fb-m-001,football,Male,2026-10-18,10:30,Main Stadium Ground,Group Match 1,team-red,team-blue,,,scheduled,,,,,
+extra-fb-m-002,football,Male,2026-10-19,11:00,Main Stadium Ground,Quarter-Final 2,team-gold,team-purple,,,scheduled,,,,,
+extra-fb-m-003,football,Male,2026-10-20,12:30,Main Stadium Ground,Semi-Final 3,team-purple,team-cyan,,,scheduled,,,,,
+extra-fb-m-004,football,Male,2026-10-21,13:00,Main Stadium Ground,Final 4,team-silver,team-gold,,,scheduled,,,,,
+extra-fb-f-005,football,Female,2026-10-22,14:30,Main Stadium Ground,Group Match 1,team-pink,team-violet,,,scheduled,,,,,
+extra-fb-f-006,football,Female,2026-10-23,15:00,Main Stadium Ground,Quarter-Final 2,team-yellow,team-rose,,,scheduled,,,,,
+extra-fb-f-007,football,Female,2026-10-24,16:30,Main Stadium Ground,Semi-Final 3,team-rose,team-white,,,scheduled,,,,,
+extra-fb-f-008,football,Female,2026-10-25,17:00,Main Stadium Ground,Final 4,team-lime,team-yellow,,,scheduled,,,,,
+extra-ck-m-009,cricket,Male,2026-10-26,09:30,University Cricket Oval,Group Match 1,team-red,team-blue,,,scheduled,,,,,
+extra-ck-m-010,cricket,Male,2026-10-27,10:00,University Cricket Oval,League Match 2,team-gold,team-purple,,,scheduled,,,,,
+extra-ck-m-011,cricket,Male,2026-10-28,11:30,University Cricket Oval,Qualifier 3,team-purple,team-cyan,,,scheduled,,,,,
+extra-ck-m-012,cricket,Male,2026-10-29,12:00,University Cricket Oval,Semi-Final 4,team-silver,team-gold,,,scheduled,,,,,
+extra-ck-f-013,cricket,Female,2026-10-30,13:30,University Cricket Oval,Group Match 1,team-pink,team-violet,,,scheduled,,,,,
+extra-ck-f-014,cricket,Female,2026-10-31,14:00,University Cricket Oval,League Match 2,team-yellow,team-rose,,,scheduled,,,,,
+extra-ck-f-015,cricket,Female,2026-11-01,15:30,University Cricket Oval,Qualifier 3,team-rose,team-white,,,scheduled,,,,,
+extra-ck-f-016,cricket,Female,2026-11-02,16:00,University Cricket Oval,Semi-Final 4,team-lime,team-yellow,,,scheduled,,,,,
+extra-bb-m-017,basketball,Male,2026-11-03,17:30,Indoor Sports Complex Court 1,League Match 1,team-red,team-blue,,,scheduled,,,,,
+extra-bb-m-018,basketball,Male,2026-11-04,09:00,Indoor Sports Complex Court 1,Quarter-Final 2,team-gold,team-purple,,,scheduled,,,,,
+extra-bb-m-019,basketball,Male,2026-10-18,10:30,Indoor Sports Complex Court 1,Semi-Final 3,team-purple,team-cyan,,,scheduled,,,,,
+extra-bb-m-020,basketball,Male,2026-10-19,11:00,Indoor Sports Complex Court 1,Final 4,team-silver,team-gold,,,scheduled,,,,,
+extra-bb-f-021,basketball,Female,2026-10-20,12:30,Indoor Sports Complex Court 1,League Match 1,team-pink,team-violet,,,scheduled,,,,,
+extra-bb-f-022,basketball,Female,2026-10-21,13:00,Indoor Sports Complex Court 1,Quarter-Final 2,team-yellow,team-rose,,,scheduled,,,,,
+extra-bb-f-023,basketball,Female,2026-10-22,14:30,Indoor Sports Complex Court 1,Semi-Final 3,team-rose,team-white,,,scheduled,,,,,
+extra-bb-f-024,basketball,Female,2026-10-23,15:00,Indoor Sports Complex Court 1,Final 4,team-lime,team-yellow,,,scheduled,,,,,
+extra-vb-m-025,volleyball,Male,2026-10-24,16:30,Outdoor Volleyball Arena,Preliminary Round 1,team-red,team-blue,,,scheduled,,,,,
+extra-vb-m-026,volleyball,Male,2026-10-25,17:00,Outdoor Volleyball Arena,League Match 2,team-gold,team-purple,,,scheduled,,,,,
+extra-vb-m-027,volleyball,Male,2026-10-26,09:30,Outdoor Volleyball Arena,Semi-Final 3,team-purple,team-cyan,,,scheduled,,,,,
+extra-vb-m-028,volleyball,Male,2026-10-27,10:00,Outdoor Volleyball Arena,Final 4,team-silver,team-gold,,,scheduled,,,,,
+extra-vb-f-029,volleyball,Female,2026-10-28,11:30,Outdoor Volleyball Arena,Preliminary Round 1,team-pink,team-violet,,,scheduled,,,,,
+extra-vb-f-030,volleyball,Female,2026-10-29,12:00,Outdoor Volleyball Arena,League Match 2,team-yellow,team-rose,,,scheduled,,,,,
+extra-vb-f-031,volleyball,Female,2026-10-30,13:30,Outdoor Volleyball Arena,Semi-Final 3,team-rose,team-white,,,scheduled,,,,,
+extra-vb-f-032,volleyball,Female,2026-10-31,14:00,Outdoor Volleyball Arena,Final 4,team-lime,team-yellow,,,scheduled,,,,,
+extra-bd-m-033,badminton,Male,2026-11-01,15:30,Badminton Arena Courts 1-3,Round of 16 1,team-red,team-blue,,,scheduled,,,,,
+extra-bd-m-034,badminton,Male,2026-11-02,16:00,Badminton Arena Courts 1-3,Quarter-Final 2,team-gold,team-purple,,,scheduled,,,,,
+extra-bd-m-035,badminton,Male,2026-11-03,17:30,Badminton Arena Courts 1-3,Semi-Final 3,team-purple,team-cyan,,,scheduled,,,,,
+extra-bd-m-036,badminton,Male,2026-11-04,09:00,Badminton Arena Courts 1-3,Final 4,team-silver,team-gold,,,scheduled,,,,,
+extra-bd-f-037,badminton,Female,2026-10-18,10:30,Badminton Arena Courts 1-3,Round of 16 1,team-pink,team-violet,,,scheduled,,,,,
+extra-bd-f-038,badminton,Female,2026-10-19,11:00,Badminton Arena Courts 1-3,Quarter-Final 2,team-yellow,team-rose,,,scheduled,,,,,
+extra-bd-f-039,badminton,Female,2026-10-20,12:30,Badminton Arena Courts 1-3,Semi-Final 3,team-rose,team-white,,,scheduled,,,,,
+extra-bd-f-040,badminton,Female,2026-10-21,13:00,Badminton Arena Courts 1-3,Final 4,team-lime,team-yellow,,,scheduled,,,,,
+extra-tt-m-041,table-tennis,Male,2026-10-22,14:30,Table Tennis Hall,First Round 1,team-red,team-blue,,,scheduled,,,,,
+extra-tt-m-042,table-tennis,Male,2026-10-23,15:00,Table Tennis Hall,Quarter-Final 2,team-gold,team-purple,,,scheduled,,,,,
+extra-tt-m-043,table-tennis,Male,2026-10-24,16:30,Table Tennis Hall,Semi-Final 3,team-purple,team-cyan,,,scheduled,,,,,
+extra-tt-m-044,table-tennis,Male,2026-10-25,17:00,Table Tennis Hall,Final 4,team-silver,team-gold,,,scheduled,,,,,
+extra-tt-f-045,table-tennis,Female,2026-10-26,09:30,Table Tennis Hall,First Round 1,team-pink,team-violet,,,scheduled,,,,,
+extra-tt-f-046,table-tennis,Female,2026-10-27,10:00,Table Tennis Hall,Quarter-Final 2,team-yellow,team-rose,,,scheduled,,,,,
+extra-tt-f-047,table-tennis,Female,2026-10-28,11:30,Table Tennis Hall,Semi-Final 3,team-rose,team-white,,,scheduled,,,,,
+extra-tt-f-048,table-tennis,Female,2026-10-29,12:00,Table Tennis Hall,Final 4,team-lime,team-yellow,,,scheduled,,,,,
+extra-ath-m-049,athletics,Male,2026-10-30,13:30,University Athletics Track,100m Sprint 1,team-red,team-blue,,,scheduled,,,,,
+extra-ath-m-050,athletics,Male,2026-10-31,14:00,University Athletics Track,200m Sprint 2,team-gold,team-purple,,,scheduled,,,,,
+extra-ath-m-051,athletics,Male,2026-11-01,15:30,University Athletics Track,Relay 3,team-purple,team-cyan,,,scheduled,,,,,
+extra-ath-m-052,athletics,Male,2026-11-02,16:00,University Athletics Track,Long Jump 4,team-silver,team-gold,,,scheduled,,,,,
+extra-ath-f-053,athletics,Female,2026-11-03,17:30,University Athletics Track,100m Sprint 1,team-pink,team-violet,,,scheduled,,,,,
+extra-ath-f-054,athletics,Female,2026-11-04,09:00,University Athletics Track,200m Sprint 2,team-yellow,team-rose,,,scheduled,,,,,
+extra-ath-f-055,athletics,Female,2026-10-18,10:30,University Athletics Track,Relay 3,team-rose,team-white,,,scheduled,,,,,
+extra-ath-f-056,athletics,Female,2026-10-19,11:00,University Athletics Track,Long Jump 4,team-lime,team-yellow,,,scheduled,,,,,
+extra-ch-m-057,chess,Male,2026-10-20,12:30,Indoor Sports Complex Hall,Round 1 1,team-red,team-blue,,,scheduled,,,,,
+extra-ch-m-058,chess,Male,2026-10-21,13:00,Indoor Sports Complex Hall,Round 2 2,team-gold,team-purple,,,scheduled,,,,,
+extra-ch-m-059,chess,Male,2026-10-22,14:30,Indoor Sports Complex Hall,Quarter-Final 3,team-purple,team-cyan,,,scheduled,,,,,
+extra-ch-m-060,chess,Male,2026-10-23,15:00,Indoor Sports Complex Hall,Semi-Final 4,team-silver,team-gold,,,scheduled,,,,,
+extra-ch-f-061,chess,Female,2026-10-24,16:30,Indoor Sports Complex Hall,Round 1 1,team-pink,team-violet,,,scheduled,,,,,
+extra-ch-f-062,chess,Female,2026-10-25,17:00,Indoor Sports Complex Hall,Round 2 2,team-yellow,team-rose,,,scheduled,,,,,
+extra-ch-f-063,chess,Female,2026-10-26,09:30,Indoor Sports Complex Hall,Quarter-Final 3,team-rose,team-white,,,scheduled,,,,,
+extra-ch-f-064,chess,Female,2026-10-27,10:00,Indoor Sports Complex Hall,Semi-Final 4,team-lime,team-yellow,,,scheduled,,,,,
+extra-kab-m-065,kabaddi,Male,2026-10-28,11:30,Main Sports Ground,League Match 1,team-red,team-blue,,,scheduled,,,,,
+extra-kab-m-066,kabaddi,Male,2026-10-29,12:00,Main Sports Ground,Quarter-Final 2,team-gold,team-purple,,,scheduled,,,,,
+extra-kab-m-067,kabaddi,Male,2026-10-30,13:30,Main Sports Ground,Semi-Final 3,team-purple,team-cyan,,,scheduled,,,,,
+extra-kab-m-068,kabaddi,Male,2026-10-31,14:00,Main Sports Ground,Final 4,team-silver,team-gold,,,scheduled,,,,,
+extra-kab-f-069,kabaddi,Female,2026-11-01,15:30,Main Sports Ground,League Match 1,team-pink,team-violet,,,scheduled,,,,,
+extra-kab-f-070,kabaddi,Female,2026-11-02,16:00,Main Sports Ground,Quarter-Final 2,team-yellow,team-rose,,,scheduled,,,,,
+extra-kab-f-071,kabaddi,Female,2026-11-03,17:30,Main Sports Ground,Semi-Final 3,team-rose,team-white,,,scheduled,,,,,
+extra-kab-f-072,kabaddi,Female,2026-11-04,09:00,Main Sports Ground,Final 4,team-lime,team-yellow,,,scheduled,,,,,
+extra-kk-m-073,kho-kho,Male,2026-10-18,10:30,Outdoor Kho Kho Ground,League Match 1,team-red,team-blue,,,scheduled,,,,,
+extra-kk-m-074,kho-kho,Male,2026-10-19,11:00,Outdoor Kho Kho Ground,Quarter-Final 2,team-gold,team-purple,,,scheduled,,,,,
+extra-kk-m-075,kho-kho,Male,2026-10-20,12:30,Outdoor Kho Kho Ground,Semi-Final 3,team-purple,team-cyan,,,scheduled,,,,,
+extra-kk-m-076,kho-kho,Male,2026-10-21,13:00,Outdoor Kho Kho Ground,Final 4,team-silver,team-gold,,,scheduled,,,,,
+extra-kk-f-077,kho-kho,Female,2026-10-22,14:30,Outdoor Kho Kho Ground,League Match 1,team-pink,team-violet,,,scheduled,,,,,
+extra-kk-f-078,kho-kho,Female,2026-10-23,15:00,Outdoor Kho Kho Ground,Quarter-Final 2,team-yellow,team-rose,,,scheduled,,,,,
+extra-kk-f-079,kho-kho,Female,2026-10-24,16:30,Outdoor Kho Kho Ground,Semi-Final 3,team-rose,team-white,,,scheduled,,,,,
+extra-kk-f-080,kho-kho,Female,2026-10-25,17:00,Outdoor Kho Kho Ground,Final 4,team-lime,team-yellow,,,scheduled,,,,,
+extra-tow-m-081,tug-of-war,Male,2026-10-26,09:30,University Sports Ground,League Match 1,team-red,team-blue,,,scheduled,,,,,
+extra-tow-m-082,tug-of-war,Male,2026-10-27,10:00,University Sports Ground,Quarter-Final 2,team-gold,team-purple,,,scheduled,,,,,
+extra-tow-m-083,tug-of-war,Male,2026-10-28,11:30,University Sports Ground,Semi-Final 3,team-purple,team-cyan,,,scheduled,,,,,
+extra-tow-m-084,tug-of-war,Male,2026-10-29,12:00,University Sports Ground,Final 4,team-silver,team-gold,,,scheduled,,,,,
+extra-tow-f-085,tug-of-war,Female,2026-10-30,13:30,University Sports Ground,League Match 1,team-pink,team-violet,,,scheduled,,,,,
+extra-tow-f-086,tug-of-war,Female,2026-10-31,14:00,University Sports Ground,Quarter-Final 2,team-yellow,team-rose,,,scheduled,,,,,
+extra-tow-f-087,tug-of-war,Female,2026-11-01,15:30,University Sports Ground,Semi-Final 3,team-rose,team-white,,,scheduled,,,,,
+extra-tow-f-088,tug-of-war,Female,2026-11-02,16:00,University Sports Ground,Final 4,team-lime,team-yellow,,,scheduled,,,,,
+extra-yog-m-089,yoga,Male,2026-11-03,17:30,Indoor Yoga Hall,Preliminary Routine 1,team-red,team-blue,,,scheduled,,,,,
+extra-yog-m-090,yoga,Male,2026-11-04,09:00,Indoor Yoga Hall,Advanced Routine 2,team-gold,team-purple,,,scheduled,,,,,
+extra-yog-m-091,yoga,Male,2026-10-18,10:30,Indoor Yoga Hall,Final 3,team-purple,team-cyan,,,scheduled,,,,,
+extra-yog-m-092,yoga,Male,2026-10-19,11:00,Indoor Yoga Hall,Preliminary Routine 4,team-silver,team-gold,,,scheduled,,,,,
+extra-yog-f-093,yoga,Female,2026-10-20,12:30,Indoor Yoga Hall,Preliminary Routine 1,team-pink,team-violet,,,scheduled,,,,,
+extra-yog-f-094,yoga,Female,2026-10-21,13:00,Indoor Yoga Hall,Advanced Routine 2,team-yellow,team-rose,,,scheduled,,,,,
+extra-yog-f-095,yoga,Female,2026-10-22,14:30,Indoor Yoga Hall,Final 3,team-rose,team-white,,,scheduled,,,,,
+extra-yog-f-096,yoga,Female,2026-10-23,15:00,Indoor Yoga Hall,Preliminary Routine 4,team-lime,team-yellow,,,scheduled,,,,,
+extra-pl-m-097,power-lifting,Male,2026-10-24,16:30,Weight Training Arena,Lightweight Final 1,team-red,team-blue,,,scheduled,,,,,
+extra-pl-m-098,power-lifting,Male,2026-10-25,17:00,Weight Training Arena,Middleweight Final 2,team-gold,team-purple,,,scheduled,,,,,
+extra-pl-m-099,power-lifting,Male,2026-10-26,09:30,Weight Training Arena,Heavyweight Final 3,team-purple,team-cyan,,,scheduled,,,,,
+extra-pl-m-100,power-lifting,Male,2026-10-27,10:00,Weight Training Arena,Final 4,team-silver,team-gold,,,scheduled,,,,,
+extra-fb-m-001,football,Male,2026-08-03,09:30,Main Stadium Ground,Group Match 1,team-red,team-blue,team-blue,2,completed,0,3,Arjun Singh,Football Player of the Match,/assets/players/default.svg
+extra-fb-m-002,football,Male,2026-08-05,17:00,Main Stadium Ground,Quarter-Final 2,team-gold,team-purple,team-gold,3,completed,5,4,Vivaan Patel,Football Player of the Match,/assets/players/default.svg
+extra-fb-m-003,football,Male,2026-08-05,09:30,Main Stadium Ground,Semi-Final 3,team-purple,team-cyan,team-cyan,3,completed,0,2,Rahul Yadav,Football Player of the Match,/assets/players/default.svg
+extra-fb-m-004,football,Male,2026-08-08,15:00,Main Stadium Ground,Final 4,team-silver,team-gold,team-gold,3,completed,0,1,Ananya Singh,Football Player of the Match,/assets/players/default.svg
+extra-fb-f-005,football,Female,2026-08-09,10:30,Main Stadium Ground,Group Match 1,team-pink,team-violet,team-pink,3,completed,3,0,Arjun Singh,Football Player of the Match,/assets/players/default.svg
+extra-fb-f-006,football,Female,2026-08-12,11:30,Main Stadium Ground,Quarter-Final 2,team-yellow,team-rose,team-yellow,3,completed,3,2,Yash Thakur,Football Player of the Match,/assets/players/default.svg
+extra-fb-f-007,football,Female,2026-08-13,12:00,Main Stadium Ground,Semi-Final 3,team-rose,team-white,team-white,3,completed,4,5,Neha Jain,Football Player of the Match,/assets/players/default.svg
+extra-fb-f-008,football,Female,2026-08-15,17:00,Main Stadium Ground,Final 4,team-lime,team-yellow,team-yellow,2,completed,0,1,Rahul Yadav,Football Player of the Match,/assets/players/default.svg
+extra-ck-m-009,cricket,Male,2026-08-17,12:00,University Cricket Oval,Group Match 1,team-red,team-blue,team-blue,3,completed,95/5,158/8,Sanya Verma,Cricket Player of the Match,/assets/players/default.svg
+extra-ck-m-010,cricket,Male,2026-08-19,16:00,University Cricket Oval,League Match 2,team-gold,team-purple,team-purple,2,completed,98/5,189/4,Ishaan Mehta,Cricket Player of the Match,/assets/players/default.svg
+extra-ck-m-011,cricket,Male,2026-08-22,12:00,University Cricket Oval,Qualifier 3,team-purple,team-cyan,team-cyan,2,completed,95/8,218/6,Rahul Yadav,Cricket Player of the Match,/assets/players/default.svg
+extra-ck-m-012,cricket,Male,2026-08-23,11:30,University Cricket Oval,Semi-Final 4,team-silver,team-gold,team-gold,2,completed,59/8,134/6,Nisha Rao,Cricket Player of the Match,/assets/players/default.svg
+extra-ck-f-013,cricket,Female,2026-08-26,16:00,University Cricket Oval,Group Match 1,team-pink,team-violet,team-violet,3,completed,71/6,118/5,Neha Jain,Cricket Player of the Match,/assets/players/default.svg
+extra-ck-f-014,cricket,Female,2026-08-28,15:00,University Cricket Oval,League Match 2,team-yellow,team-rose,team-rose,2,completed,69/10,146/5,Vivaan Patel,Cricket Player of the Match,/assets/players/default.svg
+extra-ck-f-015,cricket,Female,2026-08-29,10:00,University Cricket Oval,Qualifier 3,team-rose,team-white,team-rose,3,completed,120/9,98/4,Kavya Gupta,Cricket Player of the Match,/assets/players/default.svg
+extra-ck-f-016,cricket,Female,2026-09-02,13:00,University Cricket Oval,Semi-Final 4,team-lime,team-yellow,team-lime,3,completed,132/3,90/4,Priya Patel,Cricket Player of the Match,/assets/players/default.svg
+extra-bb-m-017,basketball,Male,2026-09-02,11:00,Indoor Sports Complex Court 1,League Match 1,team-red,team-blue,team-blue,2,completed,54,75,Ananya Singh,Basketball Player of the Match,/assets/players/default.svg
+extra-bb-m-018,basketball,Male,2026-09-06,10:00,Indoor Sports Complex Court 1,Quarter-Final 2,team-gold,team-purple,team-gold,3,completed,71,60,Dev Malhotra,Basketball Player of the Match,/assets/players/default.svg
+extra-bb-m-019,basketball,Male,2026-09-08,10:30,Indoor Sports Complex Court 1,Semi-Final 3,team-purple,team-cyan,team-cyan,2,completed,64,88,Yash Thakur,Basketball Player of the Match,/assets/players/default.svg
+extra-bb-m-020,basketball,Male,2026-09-10,09:00,Indoor Sports Complex Court 1,Final 4,team-silver,team-gold,team-silver,2,completed,85,55,Arjun Singh,Basketball Player of the Match,/assets/players/default.svg
+extra-bb-f-021,basketball,Female,2026-09-11,11:00,Indoor Sports Complex Court 1,League Match 1,team-pink,team-violet,team-violet,2,completed,47,68,Aditya Verma,Basketball Player of the Match,/assets/players/default.svg
+extra-bb-f-022,basketball,Female,2026-09-14,13:00,Indoor Sports Complex Court 1,Quarter-Final 2,team-yellow,team-rose,team-yellow,2,completed,69,64,Rohan Gupta,Basketball Player of the Match,/assets/players/default.svg
+extra-bb-f-023,basketball,Female,2026-09-16,13:00,Indoor Sports Complex Court 1,Semi-Final 3,team-rose,team-white,team-rose,3,completed,100,45,Dev Malhotra,Basketball Player of the Match,/assets/players/default.svg
+extra-bb-f-024,basketball,Female,2026-09-18,12:00,Indoor Sports Complex Court 1,Final 4,team-lime,team-yellow,team-lime,2,completed,78,57,Aditi Sharma,Basketball Player of the Match,/assets/players/default.svg
+extra-vb-m-025,volleyball,Male,2026-09-19,16:00,Outdoor Volleyball Arena,Preliminary Round 1,team-red,team-blue,team-red,3,completed,3,1,Dev Malhotra,Volleyball Player of the Match,/assets/players/default.svg
+extra-vb-m-026,volleyball,Male,2026-09-21,09:30,Outdoor Volleyball Arena,League Match 2,team-gold,team-purple,team-purple,2,completed,0,3,Priya Patel,Volleyball Player of the Match,/assets/players/default.svg
+extra-vb-m-027,volleyball,Male,2026-09-22,15:00,Outdoor Volleyball Arena,Semi-Final 3,team-purple,team-cyan,team-purple,2,completed,3,0,Aarav Sharma,Volleyball Player of the Match,/assets/players/default.svg
+extra-vb-m-028,volleyball,Male,2026-09-24,17:00,Outdoor Volleyball Arena,Final 4,team-silver,team-gold,team-silver,2,completed,3,0,Aditya Verma,Volleyball Player of the Match,/assets/players/default.svg
+extra-vb-f-029,volleyball,Female,2026-09-26,11:30,Outdoor Volleyball Arena,Preliminary Round 1,team-pink,team-violet,team-violet,2,completed,2,3,Ananya Singh,Volleyball Player of the Match,/assets/players/default.svg
+extra-vb-f-030,volleyball,Female,2026-09-30,13:00,Outdoor Volleyball Arena,League Match 2,team-yellow,team-rose,team-rose,2,completed,2,3,Neha Jain,Volleyball Player of the Match,/assets/players/default.svg
+extra-vb-f-031,volleyball,Female,2026-10-02,13:00,Outdoor Volleyball Arena,Semi-Final 3,team-rose,team-white,team-white,3,completed,1,3,Karan Joshi,Volleyball Player of the Match,/assets/players/default.svg
+extra-vb-f-032,volleyball,Female,2026-10-02,09:30,Outdoor Volleyball Arena,Final 4,team-lime,team-yellow,team-lime,3,completed,3,1,Meera Joshi,Volleyball Player of the Match,/assets/players/default.svg
+extra-bd-m-033,badminton,Male,2026-10-05,13:00,Badminton Arena Courts 1-3,Round of 16 1,team-red,team-blue,team-red,2,completed,2,0,Vivaan Patel,Badminton Player of the Match,/assets/players/default.svg
+extra-bd-m-034,badminton,Male,2026-10-07,17:00,Badminton Arena Courts 1-3,Quarter-Final 2,team-gold,team-purple,team-purple,2,completed,0,2,Karan Joshi,Badminton Player of the Match,/assets/players/default.svg
+extra-bd-m-035,badminton,Male,2026-10-08,14:00,Badminton Arena Courts 1-3,Semi-Final 3,team-purple,team-cyan,team-cyan,3,completed,0,2,Ishaan Mehta,Badminton Player of the Match,/assets/players/default.svg
+extra-bd-m-036,badminton,Male,2026-10-11,13:00,Badminton Arena Courts 1-3,Final 4,team-silver,team-gold,team-gold,3,completed,0,2,Yash Thakur,Badminton Player of the Match,/assets/players/default.svg
+extra-bd-f-037,badminton,Female,2026-10-12,09:00,Badminton Arena Courts 1-3,Round of 16 1,team-pink,team-violet,team-pink,2,completed,2,0,Rahul Yadav,Badminton Player of the Match,/assets/players/default.svg
+extra-bd-f-038,badminton,Female,2026-10-14,12:00,Badminton Arena Courts 1-3,Quarter-Final 2,team-yellow,team-rose,team-rose,2,completed,1,2,Kavya Gupta,Badminton Player of the Match,/assets/players/default.svg
+extra-bd-f-039,badminton,Female,2026-08-01,10:00,Badminton Arena Courts 1-3,Semi-Final 3,team-rose,team-white,team-white,3,completed,0,2,Ananya Singh,Badminton Player of the Match,/assets/players/default.svg
+extra-bd-f-040,badminton,Female,2026-08-04,11:00,Badminton Arena Courts 1-3,Final 4,team-lime,team-yellow,team-yellow,2,completed,1,2,Karan Joshi,Badminton Player of the Match,/assets/players/default.svg
+extra-tt-m-041,table-tennis,Male,2026-08-06,10:30,Table Tennis Hall,First Round 1,team-red,team-blue,team-red,2,completed,2,0,Priya Patel,Table Tennis Player of the Match,/assets/players/default.svg
+extra-tt-m-042,table-tennis,Male,2026-08-07,09:00,Table Tennis Hall,Quarter-Final 2,team-gold,team-purple,team-gold,2,completed,2,1,Vivaan Patel,Table Tennis Player of the Match,/assets/players/default.svg
+extra-tt-m-043,table-tennis,Male,2026-08-11,09:30,Table Tennis Hall,Semi-Final 3,team-purple,team-cyan,team-purple,2,completed,2,0,Manav Das,Table Tennis Player of the Match,/assets/players/default.svg
+extra-tt-m-044,table-tennis,Male,2026-08-11,16:00,Table Tennis Hall,Final 4,team-silver,team-gold,team-silver,3,completed,2,0,Arjun Singh,Table Tennis Player of the Match,/assets/players/default.svg
+extra-tt-f-045,table-tennis,Female,2026-08-15,10:30,Table Tennis Hall,First Round 1,team-pink,team-violet,team-pink,2,completed,2,0,Meera Joshi,Table Tennis Player of the Match,/assets/players/default.svg
+extra-tt-f-046,table-tennis,Female,2026-08-17,15:00,Table Tennis Hall,Quarter-Final 2,team-yellow,team-rose,team-yellow,3,completed,2,1,Karan Joshi,Table Tennis Player of the Match,/assets/players/default.svg
+extra-tt-f-047,table-tennis,Female,2026-08-19,17:00,Table Tennis Hall,Semi-Final 3,team-rose,team-white,team-white,3,completed,0,2,Kavya Gupta,Table Tennis Player of the Match,/assets/players/default.svg
+extra-tt-f-048,table-tennis,Female,2026-08-19,16:00,Table Tennis Hall,Final 4,team-lime,team-yellow,team-lime,3,completed,2,1,Priya Patel,Table Tennis Player of the Match,/assets/players/default.svg
+extra-ath-m-049,athletics,Male,2026-08-21,09:00,University Athletics Track,100m Sprint 1,team-red,team-blue,team-blue,2,completed,12.56s,12.36s,Aditya Verma,Athletics Player of the Match,/assets/players/default.svg
+extra-ath-m-050,athletics,Male,2026-08-25,10:30,University Athletics Track,200m Sprint 2,team-gold,team-purple,team-gold,2,completed,11.3s,13.78s,Rahul Yadav,Athletics Player of the Match,/assets/players/default.svg
+extra-ath-m-051,athletics,Male,2026-08-26,11:00,University Athletics Track,Relay 3,team-purple,team-cyan,team-cyan,3,completed,6.53,6.9,Manav Das,Athletics Player of the Match,/assets/players/default.svg
+extra-ath-m-052,athletics,Male,2026-08-29,14:00,University Athletics Track,Long Jump 4,team-silver,team-gold,team-gold,2,completed,6.94,7.34,Rohan Gupta,Athletics Player of the Match,/assets/players/default.svg
+extra-ath-f-053,athletics,Female,2026-08-30,09:30,University Athletics Track,100m Sprint 1,team-pink,team-violet,team-pink,3,completed,10.82s,12.53s,Aditi Sharma,Athletics Player of the Match,/assets/players/default.svg
+extra-ath-f-054,athletics,Female,2026-09-02,10:30,University Athletics Track,200m Sprint 2,team-yellow,team-rose,team-yellow,3,completed,11.53s,12.97s,Dev Malhotra,Athletics Player of the Match,/assets/players/default.svg
+extra-ath-f-055,athletics,Female,2026-09-03,11:00,University Athletics Track,Relay 3,team-rose,team-white,team-rose,3,completed,8.18,5.18,Ananya Singh,Athletics Player of the Match,/assets/players/default.svg
+extra-ath-f-056,athletics,Female,2026-09-04,09:00,University Athletics Track,Long Jump 4,team-lime,team-yellow,team-yellow,3,completed,7.23,7.7,Ishaan Mehta,Athletics Player of the Match,/assets/players/default.svg
+extra-ch-m-057,chess,Male,2026-09-08,13:00,Indoor Sports Complex Hall,Round 1 1,team-red,team-blue,team-red,3,completed,1,0,Yash Thakur,Chess Player of the Match,/assets/players/default.svg
+extra-ch-m-058,chess,Male,2026-09-08,09:30,Indoor Sports Complex Hall,Round 2 2,team-gold,team-purple,team-purple,2,completed,0,1,Yash Thakur,Chess Player of the Match,/assets/players/default.svg
+extra-ch-m-059,chess,Male,2026-09-10,11:30,Indoor Sports Complex Hall,Quarter-Final 3,team-purple,team-cyan,team-purple,2,completed,1,0,Meera Joshi,Chess Player of the Match,/assets/players/default.svg
+extra-ch-m-060,chess,Male,2026-09-12,09:00,Indoor Sports Complex Hall,Semi-Final 4,team-silver,team-gold,team-gold,3,completed,0,1,Vivaan Patel,Chess Player of the Match,/assets/players/default.svg
+extra-ch-f-061,chess,Female,2026-09-15,10:30,Indoor Sports Complex Hall,Round 1 1,team-pink,team-violet,team-pink,2,completed,1,0,Arjun Singh,Chess Player of the Match,/assets/players/default.svg
+extra-ch-f-062,chess,Female,2026-09-17,14:00,Indoor Sports Complex Hall,Round 2 2,team-yellow,team-rose,team-yellow,3,completed,1,0,Manav Das,Chess Player of the Match,/assets/players/default.svg
+extra-ch-f-063,chess,Female,2026-09-20,10:00,Indoor Sports Complex Hall,Quarter-Final 3,team-rose,team-white,team-rose,2,completed,1,0,Ishaan Mehta,Chess Player of the Match,/assets/players/default.svg
+extra-ch-f-064,chess,Female,2026-09-20,12:00,Indoor Sports Complex Hall,Semi-Final 4,team-lime,team-yellow,team-yellow,2,completed,0,1,Priya Patel,Chess Player of the Match,/assets/players/default.svg
+extra-kab-m-065,kabaddi,Male,2026-09-23,16:00,Main Sports Ground,League Match 1,team-red,team-blue,team-red,2,completed,58,32,Ananya Singh,Kabaddi Player of the Match,/assets/players/default.svg
+extra-kab-m-066,kabaddi,Male,2026-09-24,17:00,Main Sports Ground,Quarter-Final 2,team-gold,team-purple,team-purple,2,completed,33,47,Nisha Rao,Kabaddi Player of the Match,/assets/players/default.svg
+extra-kab-m-067,kabaddi,Male,2026-09-26,10:30,Main Sports Ground,Semi-Final 3,team-purple,team-cyan,team-purple,3,completed,64,27,Aditi Sharma,Kabaddi Player of the Match,/assets/players/default.svg
+extra-kab-m-068,kabaddi,Male,2026-09-28,10:30,Main Sports Ground,Final 4,team-silver,team-gold,team-gold,3,completed,23,56,Priya Patel,Kabaddi Player of the Match,/assets/players/default.svg
+extra-kab-f-069,kabaddi,Female,2026-10-01,09:30,Main Sports Ground,League Match 1,team-pink,team-violet,team-pink,3,completed,59,24,Dev Malhotra,Kabaddi Player of the Match,/assets/players/default.svg
+extra-kab-f-070,kabaddi,Female,2026-10-03,16:00,Main Sports Ground,Quarter-Final 2,team-yellow,team-rose,team-yellow,3,completed,61,28,Aarav Sharma,Kabaddi Player of the Match,/assets/players/default.svg
+extra-kab-f-071,kabaddi,Female,2026-10-04,11:00,Main Sports Ground,Semi-Final 3,team-rose,team-white,team-white,2,completed,24,53,Arjun Singh,Kabaddi Player of the Match,/assets/players/default.svg
+extra-kab-f-072,kabaddi,Female,2026-10-08,12:00,Main Sports Ground,Final 4,team-lime,team-yellow,team-yellow,3,completed,32,58,Meera Joshi,Kabaddi Player of the Match,/assets/players/default.svg
+extra-kk-m-073,kho-kho,Male,2026-10-10,14:00,Outdoor Kho Kho Ground,League Match 1,team-red,team-blue,team-blue,2,completed,19,32,Ananya Singh,Kho Kho Player of the Match,/assets/players/default.svg
+extra-kk-m-074,kho-kho,Male,2026-10-10,17:00,Outdoor Kho Kho Ground,Quarter-Final 2,team-gold,team-purple,team-purple,2,completed,18,20,Sanya Verma,Kho Kho Player of the Match,/assets/players/default.svg
+extra-kk-m-075,kho-kho,Male,2026-10-13,09:30,Outdoor Kho Kho Ground,Semi-Final 3,team-purple,team-cyan,team-purple,3,completed,30,19,Arjun Singh,Kho Kho Player of the Match,/assets/players/default.svg
+extra-kk-m-076,kho-kho,Male,2026-08-01,11:00,Outdoor Kho Kho Ground,Final 4,team-silver,team-gold,team-silver,3,completed,29,16,Kavya Gupta,Kho Kho Player of the Match,/assets/players/default.svg
+extra-kk-f-077,kho-kho,Female,2026-08-03,11:00,Outdoor Kho Kho Ground,League Match 1,team-pink,team-violet,team-pink,3,completed,24,13,Kavya Gupta,Kho Kho Player of the Match,/assets/players/default.svg
+extra-kk-f-078,kho-kho,Female,2026-08-05,17:00,Outdoor Kho Kho Ground,Quarter-Final 2,team-yellow,team-rose,team-yellow,3,completed,25,19,Kavya Gupta,Kho Kho Player of the Match,/assets/players/default.svg
+extra-kk-f-079,kho-kho,Female,2026-08-07,09:00,Outdoor Kho Kho Ground,Semi-Final 3,team-rose,team-white,team-white,3,completed,13,29,Neha Jain,Kho Kho Player of the Match,/assets/players/default.svg
+extra-kk-f-080,kho-kho,Female,2026-08-09,16:00,Outdoor Kho Kho Ground,Final 4,team-lime,team-yellow,team-yellow,3,completed,17,34,Karan Joshi,Kho Kho Player of the Match,/assets/players/default.svg
+extra-tow-m-081,tug-of-war,Male,2026-08-11,13:00,University Sports Ground,League Match 1,team-red,team-blue,team-red,3,completed,2,0,Dev Malhotra,Tug Of War Player of the Match,/assets/players/default.svg
+extra-tow-m-082,tug-of-war,Male,2026-08-13,16:00,University Sports Ground,Quarter-Final 2,team-gold,team-purple,team-gold,2,completed,3,0,Aditi Sharma,Tug Of War Player of the Match,/assets/players/default.svg
+extra-tow-m-083,tug-of-war,Male,2026-08-13,10:30,University Sports Ground,Semi-Final 3,team-purple,team-cyan,team-cyan,2,completed,0,2,Nisha Rao,Tug Of War Player of the Match,/assets/players/default.svg
+extra-tow-m-084,tug-of-war,Male,2026-08-17,09:30,University Sports Ground,Final 4,team-silver,team-gold,team-gold,2,completed,2,3,Kavya Gupta,Tug Of War Player of the Match,/assets/players/default.svg
+extra-tow-f-085,tug-of-war,Female,2026-08-18,12:00,University Sports Ground,League Match 1,team-pink,team-violet,team-violet,2,completed,0,2,Meera Joshi,Tug Of War Player of the Match,/assets/players/default.svg
+extra-tow-f-086,tug-of-war,Female,2026-08-19,10:00,University Sports Ground,Quarter-Final 2,team-yellow,team-rose,team-yellow,2,completed,3,0,Arjun Singh,Tug Of War Player of the Match,/assets/players/default.svg
+extra-tow-f-087,tug-of-war,Female,2026-08-22,10:00,University Sports Ground,Semi-Final 3,team-rose,team-white,team-rose,3,completed,3,2,Ira Mehta,Tug Of War Player of the Match,/assets/players/default.svg
+extra-tow-f-088,tug-of-war,Female,2026-08-25,17:00,University Sports Ground,Final 4,team-lime,team-yellow,team-lime,3,completed,3,2,Ishaan Mehta,Tug Of War Player of the Match,/assets/players/default.svg
+extra-yog-m-089,yoga,Male,2026-08-27,13:00,Indoor Yoga Hall,Preliminary Routine 1,team-red,team-blue,team-blue,2,completed,84,89,Ananya Singh,Yoga Player of the Match,/assets/players/default.svg
+extra-yog-m-090,yoga,Male,2026-08-29,13:00,Indoor Yoga Hall,Advanced Routine 2,team-gold,team-purple,team-gold,3,completed,88,68,Aditya Verma,Yoga Player of the Match,/assets/players/default.svg
+extra-yog-m-091,yoga,Male,2026-08-31,11:00,Indoor Yoga Hall,Final 3,team-purple,team-cyan,team-cyan,3,completed,70,89,Yash Thakur,Yoga Player of the Match,/assets/players/default.svg
+extra-yog-m-092,yoga,Male,2026-08-31,10:00,Indoor Yoga Hall,Preliminary Routine 4,team-silver,team-gold,team-gold,2,completed,72,88,Karan Joshi,Yoga Player of the Match,/assets/players/default.svg
+extra-yog-f-093,yoga,Female,2026-09-02,12:00,Indoor Yoga Hall,Preliminary Routine 1,team-pink,team-violet,team-violet,3,completed,77,90,Meera Joshi,Yoga Player of the Match,/assets/players/default.svg
+extra-yog-f-094,yoga,Female,2026-09-04,10:30,Indoor Yoga Hall,Advanced Routine 2,team-yellow,team-rose,team-yellow,2,completed,91,72,Neha Jain,Yoga Player of the Match,/assets/players/default.svg
+extra-yog-f-095,yoga,Female,2026-09-07,13:00,Indoor Yoga Hall,Final 3,team-rose,team-white,team-white,3,completed,69,90,Meera Joshi,Yoga Player of the Match,/assets/players/default.svg
+extra-yog-f-096,yoga,Female,2026-09-10,17:00,Indoor Yoga Hall,Preliminary Routine 4,team-lime,team-yellow,team-lime,2,completed,93,79,Nisha Rao,Yoga Player of the Match,/assets/players/default.svg
+extra-pl-m-097,power-lifting,Male,2026-09-10,11:00,Weight Training Arena,Lightweight Final 1,team-red,team-blue,team-blue,3,completed,53 kg,274 kg,Priya Patel,Power Lifting Player of the Match,/assets/players/default.svg
+extra-pl-m-098,power-lifting,Male,2026-09-14,16:00,Weight Training Arena,Middleweight Final 2,team-gold,team-purple,team-gold,2,completed,253 kg,142 kg,Ira Mehta,Power Lifting Player of the Match,/assets/players/default.svg
+extra-pl-m-099,power-lifting,Male,2026-09-14,15:00,Weight Training Arena,Heavyweight Final 3,team-purple,team-cyan,team-purple,2,completed,156 kg,100 kg,Aditya Verma,Power Lifting Player of the Match,/assets/players/default.svg
+extra-pl-m-100,power-lifting,Male,2026-09-18,12:00,Weight Training Arena,Final 4,team-silver,team-gold,team-gold,2,completed,73 kg,268 kg,Ananya Singh,Power Lifting Player of the Match,/assets/players/default.svg
