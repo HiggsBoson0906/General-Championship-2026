@@ -31,9 +31,13 @@ describe('Production CSV Datasets Integrity & Consistency', () => {
     expect(teamIds).toContain('team-blue');
     expect(teamIds).toContain('team-gold');
     expect(teamIds).toContain('team-green');
+
+    result.data.forEach((team) => {
+      expect(team.teamCategory.trim()).not.toBe('');
+    });
   });
 
-  it('validates public/data/sports.csv with the 6 required sports', () => {
+  it('validates public/data/sports.csv with the 13 required sports', () => {
     const content = fs.readFileSync(path.join(publicDataDir, 'sports.csv'), 'utf8');
     const result = parseCsvText(content, 'sports.csv', RawSportSchema, transformSport);
 
@@ -42,8 +46,15 @@ describe('Production CSV Datasets Integrity & Consistency', () => {
 
     const sportIds = result.data.map((s) => s.id);
     expect(sportIds).toEqual(
-      expect.arrayContaining(['football', 'cricket', 'basketball', 'volleyball', 'badminton', 'table-tennis'])
+      expect.arrayContaining(['football', 'cricket', 'basketball', 'volleyball', 'badminton', 'table-tennis', 'athletics', 'chess', 'kabaddi', 'kho-kho', 'tug-of-war', 'yoga', 'power-lifting'])
     );
+
+    result.data.forEach((sport) => {
+      expect(sport.sportCategory.length).toBeGreaterThan(0);
+      sport.sportCategory.forEach((category) => {
+        expect(category.trim()).not.toBe('');
+      });
+    });
   });
 
   it('validates public/data/matches.csv with >= 30 matches and valid scores/statuses', () => {
@@ -69,6 +80,10 @@ describe('Production CSV Datasets Integrity & Consistency', () => {
       expect(m.scoreTeam1).toBe('');
       expect(m.scoreTeam2).toBe('');
       expect(m.winnerId).toBeNull();
+    });
+
+    result.data.forEach((match) => {
+      expect(match.matchCategory.trim()).not.toBe('');
     });
   });
 
@@ -107,17 +122,17 @@ describe('Production CSV Datasets Integrity & Consistency', () => {
 
   describe('Integrity validation error detection tests', () => {
     const validTeams = [
-      { id: 'team-red', name: 'Red', shortName: 'R', department: 'D', image: '', primaryColor: '', description: '' },
-      { id: 'team-blue', name: 'Blue', shortName: 'B', department: 'D', image: '', primaryColor: '', description: '' },
+      { id: 'team-red', name: 'Red', teamCategory: 'Male',shortName: 'R', department: 'D', image: '', primaryColor: '', description: '' },
+      { id: 'team-blue', name: 'Blue', teamCategory: 'Female',shortName: 'B', department: 'D', image: '', primaryColor: '', description: '' },
     ];
     const validSports = [
-      { id: 'football', title: 'Football', category: 'Team', description: '', image: '', venue: '', maxPoints: 20 },
+      { id: 'cricket', title: 'Cricket', sportCategory: ['Male'], category: 'Team', description: '', image: '', bannerImg: '', venue: '', maxPoints: 20 },
     ];
 
     it('catches duplicate IDs', () => {
       const duplicateTeams = [
         ...validTeams,
-        { id: 'team-red', name: 'Duplicate Red', shortName: 'R2', department: 'D', image: '', primaryColor: '', description: '' },
+        { id: 'team-red', name: 'Duplicate Red', teamCategory: 'Male',shortName: 'R2', department: 'D', image: '', bannerImg: '',primaryColor: '', description: '' },
       ];
       const warnings = validateIntegrity(duplicateTeams, validSports, [], []);
       expect(warnings.some((w) => w.includes('Duplicate team ID'))).toBe(true);
@@ -128,6 +143,7 @@ describe('Production CSV Datasets Integrity & Consistency', () => {
         {
           id: 'm-err',
           sportId: 'hockey', // non-existent
+          matchCategory: 'Male',
           date: '2025-09-24',
           time: '16:00',
           venue: 'Ground',
@@ -152,6 +168,7 @@ describe('Production CSV Datasets Integrity & Consistency', () => {
         {
           id: 'm-err2',
           sportId: 'football',
+          matchCategory: 'Men', // non-existent
           date: '2026-10-24',
           time: '16:00',
           venue: 'Ground',
@@ -167,6 +184,7 @@ describe('Production CSV Datasets Integrity & Consistency', () => {
       ];
 
       const warnings = validateIntegrity(validTeams, validSports, invalidMatches, []);
+      expect(warnings.some((w) => w.includes('invalid matchCategory'))).toBe(true);
       expect(warnings.some((w) => w.includes('has final scores assigned'))).toBe(true);
     });
   });

@@ -5,6 +5,7 @@
 export interface Team {
   id: string;
   name: string;
+  teamCategory: string;
   shortName: string;
   department: string;
   image: string;
@@ -15,9 +16,11 @@ export interface Team {
 export interface Sport {
   id: string;
   title: string;
+  sportCategory: string[];
   category: string;
   description: string;
   image: string;
+  bannerImg: string;
   venue: string;
   maxPoints: number;
 }
@@ -27,6 +30,7 @@ export type MatchStatus = 'completed' | 'scheduled' | 'live' | 'cancelled';
 export interface Match {
   id: string;
   sportId: string;
+  matchCategory: string;
   date: string; // ISO YYYY-MM-DD
   time: string; // e.g. "16:00"
   venue: string;

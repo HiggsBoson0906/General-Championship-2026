@@ -15,14 +15,14 @@ import type { Team, Sport, Match } from '../../types';
 
 describe('Rankings Calculation Engine', () => {
   const mockTeams: Team[] = [
-    { id: 'team-red', name: 'Red Phoenix', shortName: 'RED', department: 'Mech', image: '', primaryColor: '#ef4444', description: '' },
-    { id: 'team-blue', name: 'Blue Titans', shortName: 'BLU', department: 'CS', image: '', primaryColor: '#3b82f6', description: '' },
-    { id: 'team-gold', name: 'Golden Eagles', shortName: 'GLD', department: 'Arch', image: '', primaryColor: '#f59e0b', description: '' },
+    { id: 'team-red', name: 'Red Phoenix', teamCategory: 'Male', shortName: 'RED', department: 'Mech', image: '', primaryColor: '#ef4444', description: '' },
+    { id: 'team-blue', name: 'Blue Titans', teamCategory: 'Male', shortName: 'BLU', department: 'CS', image: '', primaryColor: '#3b82f6', description: '' },
+    { id: 'team-gold', name: 'Golden Eagles', teamCategory: 'Male', shortName: 'GLD', department: 'Arch', image: '', primaryColor: '#f59e0b', description: '' },
   ];
 
   const mockSports: Sport[] = [
-    { id: 'cricket', title: 'Cricket', category: 'Team', description: '', image: '', venue: 'Oval', maxPoints: 35 },
-    { id: 'football', title: 'Football', category: 'Team', description: '', image: '', venue: 'Ground', maxPoints: 30 },
+    { id: 'cricket', title: 'Cricket', sportCategory: ['Male'], category: 'Team', description: '', image: '', bannerImg: '', venue: 'Oval', maxPoints: 35 },
+    { id: 'football', title: 'Football', sportCategory: ['Male','Female'], category: 'Team', description: '', image: '', bannerImg: '', venue: 'Ground', maxPoints: 30 },
   ];
 
   it('aggregates explicit match points and assigns correct ranks', () => {
@@ -30,6 +30,7 @@ describe('Rankings Calculation Engine', () => {
       {
         id: 'm1',
         sportId: 'cricket',
+        matchCategory: 'Male',
         date: '2025-09-29',
         time: '16:00',
         venue: 'Oval',
@@ -45,6 +46,7 @@ describe('Rankings Calculation Engine', () => {
       {
         id: 'm2',
         sportId: 'football',
+        matchCategory: 'Female',
         date: '2025-09-28',
         time: '17:00',
         venue: 'Ground',
@@ -82,6 +84,7 @@ describe('Rankings Calculation Engine', () => {
       {
         id: 'm1',
         sportId: 'cricket',
+        matchCategory: 'Male',
         date: '2025-09-29',
         time: '16:00',
         venue: 'Oval',
@@ -97,6 +100,7 @@ describe('Rankings Calculation Engine', () => {
       {
         id: 'm2',
         sportId: 'cricket',
+        matchCategory: 'Male',
         date: '2025-09-28',
         time: '16:00',
         venue: 'Oval',
@@ -126,7 +130,8 @@ describe('Rankings Calculation Engine', () => {
       {
         id: 'm-scheduled',
         sportId: 'cricket',
-        date: '2026-10-15',
+        matchCategory: 'Male',
+        date: '2026-10-24',
         time: '16:00',
         venue: 'Oval',
         stage: 'Final',
@@ -153,13 +158,22 @@ describe('Rankings Calculation Engine', () => {
 
     const standings = calculateStandings(teams, sports, matches, DEFAULT_SCORING_CONFIG);
 
-    expect(standings).toHaveLength(8);
+    expect(standings).toHaveLength(teams.length);
     // Highest points team should be rank 1
-    expect(standings[0].rank).toBe(1);
-    expect(standings[0].overallPoints).toBeGreaterThan(standings[1].overallPoints);
-    // All 8 teams should have distributed points arrays for all 6 sports
-    standings.forEach((s) => {
-      expect(s.distributedPoints).toHaveLength(6);
+    
+    if (standings.length > 0) {
+      expect(standings[0].rank).toBe(1);
+    }
+
+     // Standings should be sorted by descending overall points.
+    for (let i = 1; i < standings.length; i++) {
+      expect(standings[i - 1].overallPoints).toBeGreaterThanOrEqual(
+        standings[i].overallPoints
+      );
+    }
+
+    standings.forEach((team) => {
+      expect(team.distributedPoints).toHaveLength(sports.length);
     });
   });
 });

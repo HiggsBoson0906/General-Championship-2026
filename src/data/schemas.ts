@@ -7,6 +7,7 @@ import type { Team, Sport, Match, ChampionshipHistory, GalleryItem, MatchStatus 
 export const RawTeamSchema = z.object({
   id: z.string().trim().min(1, 'Team ID is required'),
   name: z.string().trim().min(1, 'Team name is required'),
+  teamCategory: z.string().trim().min(1, 'Team category is required'),
   short_name: z.string().trim().min(1, 'Short name is required'),
   department: z.string().trim().min(1, 'Department is required'),
   image: z.string().trim().default('/assets/teams/default.svg'),
@@ -18,6 +19,7 @@ export function transformTeam(raw: z.infer<typeof RawTeamSchema>): Team {
   return {
     id: raw.id,
     name: raw.name,
+    teamCategory: raw.teamCategory,
     shortName: raw.short_name,
     department: raw.department,
     image: raw.image,
@@ -32,9 +34,11 @@ export function transformTeam(raw: z.infer<typeof RawTeamSchema>): Team {
 export const RawSportSchema = z.object({
   id: z.string().trim().min(1, 'Sport ID is required'),
   title: z.string().trim().min(1, 'Sport title is required'),
+  sportCategory: z.string().transform((value) => value.split(";").map((sportCategory) => sportCategory.trim()).filter(Boolean)),
   category: z.string().trim().min(1, 'Sport category is required'),
   description: z.string().trim().default(''),
-  image: z.string().trim().default('/assets/sports/default.svg'),
+  image: z.string().trim().default('/assets/sports/default.png'),
+  bannerImg: z.string().trim().default('/assets/banners/default.png'),
   venue: z.string().trim().default('Main Sports Complex'),
   max_points: z.coerce.number().min(0, 'Max points must be non-negative').default(20),
 });
@@ -43,9 +47,11 @@ export function transformSport(raw: z.infer<typeof RawSportSchema>): Sport {
   return {
     id: raw.id,
     title: raw.title,
+    sportCategory: raw.sportCategory,
     category: raw.category,
     description: raw.description,
     image: raw.image,
+    bannerImg: raw.bannerImg,
     venue: raw.venue,
     maxPoints: raw.max_points,
   };
@@ -59,6 +65,7 @@ const MatchStatusEnum = z.enum(['completed', 'scheduled', 'live', 'cancelled']);
 export const RawMatchSchema = z.object({
   id: z.string().trim().min(1, 'Match ID is required'),
   sport_id: z.string().trim().min(1, 'Sport ID is required'),
+  matchCategory: z.string().trim().min(1, 'Match category is required'),
   date: z
     .string()
     .trim()
@@ -104,6 +111,7 @@ export function transformMatch(raw: z.infer<typeof RawMatchSchema>): Match {
   return {
     id: raw.id,
     sportId: raw.sport_id,
+    matchCategory: raw.matchCategory,
     date: raw.date,
     time: raw.time || 'TBD',
     venue: raw.venue,
