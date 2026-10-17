@@ -16,6 +16,7 @@ describe('Data Schemas & Validation', () => {
     const rawTeam = {
       id: 'team-red',
       name: 'Red Phoenix',
+      teamCategory: 'Male',
       short_name: 'RED',
       department: 'Mechanical',
       image: '/assets/teams/team-red.svg',
@@ -35,9 +36,11 @@ describe('Data Schemas & Validation', () => {
     const rawSport = {
       id: 'cricket',
       title: 'Cricket',
+      sportCategory: ['Male'],
       category: 'Team Sport',
       description: 'Exciting matches',
       image: '/cricket.jpg',
+      bannerImg: '/banner/cricket.png',
       venue: 'Main Oval',
       max_points: '35',
     };
@@ -70,6 +73,7 @@ describe('Data Schemas & Validation', () => {
     const rawMatch = {
       id: 'm-1',
       sport_id: 'cricket',
+      matchCategory: 'Male',
       date: '2025-09-29',
       time: '16:00',
       venue: 'Main Oval',
@@ -123,15 +127,16 @@ describe('Data Schemas & Validation', () => {
 
   it('detects broken foreign key references in validateIntegrity', () => {
     const teams = [
-      { id: 'team-red', name: 'Team Red', shortName: 'TR', department: 'D1', image: '', primaryColor: '', description: '' },
+      { id: 'team-red', name: 'Team Red', teamCategory: 'Male', shortName: 'TR', department: 'D1', image: '', primaryColor: '', description: '' },
     ];
     const sports = [
-      { id: 'cricket', title: 'Cricket', category: 'Team', description: '', image: '', venue: '', maxPoints: 20 },
+      { id: 'cricket', title: 'Cricket', sportCategory: ['Male'], category: 'Team', description: '', image: '', bannerImg: '', venue: '', maxPoints: 20 },
     ];
     const matches = [
       {
         id: 'm-bad',
         sportId: 'non-existent-sport',
+        matchCategory: 'Male',
         date: '2025-09-29',
         time: '16:00',
         venue: 'Oval',
